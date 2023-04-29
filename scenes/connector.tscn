@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://5k4nqu008du0"]
+
+[ext_resource type="Texture2D" uid="uid://dj1yyur3dthed" path="res://assets/connector.png" id="1_i8am3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k67ix"]
+size = Vector2(64, 32)
+
+[node name="Connector" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture = ExtResource("1_i8am3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+scale = Vector2(0.68881, 0.684175)
+shape = SubResource("RectangleShape2D_k67ix")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://db1ktepck40ne"]
+
+[ext_resource type="Texture2D" uid="uid://biebqylnh6ava" path="res://assets/cabin2.png" id="1_kgky6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k67ix"]
+size = Vector2(64, 32)
+
+[node name="Cabin2" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture = ExtResource("1_kgky6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("RectangleShape2D_k67ix")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://s3leiq10ktiv"]
+
+[ext_resource type="Texture2D" uid="uid://bl5wkc4hacmuf" path="res://assets/storage.png" id="1_u2xf3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oph21"]
+
+[node name="Storage" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture = ExtResource("1_u2xf3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+scale = Vector2(3.32, 3.32)
+shape = SubResource("CircleShape2D_oph21")

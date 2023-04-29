@@ -1,0 +1,94 @@
+[gd_scene load_steps=9 format=3 uid="uid://bsprwxolptb1u"]
+
+[ext_resource type="Script" path="res://scripts/spaceship.gd" id="1_jec4l"]
+[ext_resource type="Texture2D" uid="uid://26u15nlrwvge" path="res://assets/Spaceship.png" id="2_osail"]
+[ext_resource type="Texture2D" uid="uid://dvnwn1p024ly3" path="res://assets/flame.png" id="3_pa8vr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4heja"]
+radius = 4.68833
+height = 10.7974
+
+[sub_resource type="Curve" id="Curve_vajj1"]
+min_value = -200.0
+max_value = 200.0
+_data = [Vector2(0.010989, 21.8182), 0.0, 0.0, 0, 0, Vector2(0.989011, -54.5454), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_ws48y"]
+min_value = -15.07
+max_value = 15.07
+_data = [Vector2(0.0164835, -26.1818), 0.0, 0.0, 0, 0, Vector2(1, 39.2727), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_hiji7"]
+_data = [Vector2(0.010989, 0.327273), 0.0, 0.0, 0, 0, Vector2(1, 0.781818), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_8o647"]
+colors = PackedColorArray(1, 1, 1, 0.662745, 0.223103, 0.223103, 0.223103, 0)
+
+[node name="Spaceship" type="RigidBody2D"]
+z_index = 10
+mass = 100000.0
+gravity_scale = 0.0
+script = ExtResource("1_jec4l")
+max_speed = 100.0
+
+[node name="Texture" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("2_osail")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+scale = Vector2(4.4831, 7.03875)
+shape = SubResource("CapsuleShape2D_4heja")
+
+[node name="RightBack" type="CPUParticles2D" parent="."]
+show_behind_parent = true
+z_index = -1
+position = Vector2(-35, 22)
+scale = Vector2(0.782, 2.5)
+amount = 100
+explosiveness = 0.06
+randomness = 0.28
+texture = ExtResource("3_pa8vr")
+emission_shape = 3
+emission_rect_extents = Vector2(1, 1)
+direction = Vector2(-1, 0)
+spread = 3.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 136.19
+initial_velocity_max = 240.95
+linear_accel_min = 34.13
+linear_accel_max = 100.0
+linear_accel_curve = SubResource("Curve_vajj1")
+angle_min = -10.0
+angle_max = 10.0
+angle_curve = SubResource("Curve_ws48y")
+scale_amount_curve = SubResource("Curve_hiji7")
+color_ramp = SubResource("Gradient_8o647")
+
+[node name="LeftBack" type="CPUParticles2D" parent="."]
+show_behind_parent = true
+z_index = -1
+position = Vector2(-35, -22)
+scale = Vector2(0.782, 2.5)
+amount = 100
+explosiveness = 0.06
+randomness = 0.28
+texture = ExtResource("3_pa8vr")
+emission_shape = 3
+emission_rect_extents = Vector2(1, 1)
+direction = Vector2(-1, 0)
+spread = 3.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 136.19
+initial_velocity_max = 240.95
+linear_accel_min = 34.13
+linear_accel_max = 100.0
+linear_accel_curve = SubResource("Curve_vajj1")
+angle_min = -10.0
+angle_max = 10.0
+angle_curve = SubResource("Curve_ws48y")
+scale_amount_curve = SubResource("Curve_hiji7")
+color_ramp = SubResource("Gradient_8o647")

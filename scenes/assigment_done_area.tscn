@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtfmitf8jhsiq"]
+
+[ext_resource type="Texture2D" uid="uid://ote2bf40i5dr" path="res://assets/blue_circle.png" id="1_m8aos"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j3inr"]
+radius = 64.7611
+
+[node name="AssigmentDoneArea" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_j3inr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_m8aos")

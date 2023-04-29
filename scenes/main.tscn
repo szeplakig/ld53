@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpbl3t37t3xnh"]
+
+[ext_resource type="PackedScene" uid="uid://cp1i4degfc147" path="res://scenes/background.tscn" id="1_4dbd7"]
+[ext_resource type="PackedScene" uid="uid://bsprwxolptb1u" path="res://scenes/Spaceschip.tscn" id="2_7jat3"]
+[ext_resource type="PackedScene" uid="uid://c8rmgin8hkhaa" path="res://scenes/center_station.tscn" id="3_81iqs"]
+[ext_resource type="PackedScene" uid="uid://deo4ci38eav71" path="res://scenes/assigment_area.tscn" id="4_872kv"]
+
+[node name="space" type="Node2D"]
+
+[node name="Spaceship" parent="." instance=ExtResource("2_7jat3")]
+position = Vector2(494, 58)
+
+[node name="Camera2D" type="Camera2D" parent="Spaceship"]
+position_smoothing_enabled = true
+position_smoothing_speed = 20.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="Background" parent="." instance=ExtResource("1_4dbd7")]
+
+[node name="SpaceStation" parent="." instance=ExtResource("3_81iqs")]
+position = Vector2(360, 41)
+
+[node name="AssigmentArea" parent="." instance=ExtResource("4_872kv")]
+position = Vector2(-610, 349)
