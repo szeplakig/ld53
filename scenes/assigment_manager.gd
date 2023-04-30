@@ -62,9 +62,9 @@ func step(state_input: String):
 	match state_input:
 		"take":
 			succ = transition_to_taken(current_state)
-		"finish":
+		"finished":
 			succ = transition_to_finished(current_state)
-		"fail":
+		"failed":
 			succ = transition_to_failed(current_state)
 	if succ:
 		print('Successful state change to ', state_input)
@@ -77,10 +77,10 @@ func select_next_assigment():
 		current_assignment = assignment_data.file_data.easy[assigmentent_index]
 	elif assigmentent_index < assignment_data.file_data.easy.size() + assignment_data.file_data.medium.size():
 		print('medium')
-		current_assignment = assignment_data.file_data.medium[assigmentent_index]
+		current_assignment = assignment_data.file_data.medium[assigmentent_index - assignment_data.file_data.easy.size()]
 	elif assigmentent_index < assignment_data.file_data.easy.size() + assignment_data.file_data.medium.size() + assignment_data.file_data.hard.size():
 		print('hard')
-		current_assignment = assignment_data.file_data.hard[assigmentent_index]
+		current_assignment = assignment_data.file_data.hard[assigmentent_index - assignment_data.file_data.easy.size() + assignment_data.file_data.medium.size()]
 	else:
 		print('none left')
 		current_assignment = null

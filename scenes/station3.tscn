@@ -144,3 +144,4 @@ texture = ExtResource("2_02bt0")
 
 [node name="AssigmentDoneArea" parent="." instance=ExtResource("6_spiat")]
 position = Vector2(-9.104, -1104)
+station_id = 2

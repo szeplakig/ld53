@@ -63,4 +63,4 @@ scale = Vector2(5, 5)
 texture = ExtResource("5_w0rl5")
 
 [node name="AssigmentDoneArea" parent="." instance=ExtResource("6_lg3px")]
-position = Vector2(-25.3333, -929.333)
+position = Vector2(-26.6667, 370.667)

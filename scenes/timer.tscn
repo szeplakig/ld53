@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://bt5apbrevqeht"]
+
+[ext_resource type="Script" path="res://scenes/timer.gd" id="1_vluji"]
+
+[node name="Timer" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vluji")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_right = 200.0
+offset_bottom = 40.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "aaaaaaaaaa"
+horizontal_alignment = 1
+vertical_alignment = 1

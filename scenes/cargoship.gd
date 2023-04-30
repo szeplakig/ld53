@@ -1,8 +1,8 @@
 extends RigidBody2D
 
-enum types {none, food, water, ammo, neutronium, metal, solar}
 
-@export var type: types = types.none
+
+@export var type: String = ''
 @onready var Water = $Types/Water
 @onready var Food = $Types/Food
 @onready var Metal = $Types/Metal
@@ -10,22 +10,26 @@ enum types {none, food, water, ammo, neutronium, metal, solar}
 @onready var Neutronium = $Types/Neutronium
 @onready var Ammo = $Types/Ammo
 
-
-func _ready():
+func display():
+	Food.hide()
+	Water.hide()
+	Ammo.hide()
+	Neutronium.hide()
+	Metal.hide()
+	Solar.hide()
 	match type:
-		types.food:
+		"food":
 			Food.show()
-		types.water:
+		"water":
 			Water.show()
-		types.ammo:
+		"ammo":
 			Ammo.show()
-		types.neutronium:
+		"neutronium":
 			Neutronium.show()
-		types.metal:
+		"metal":
 			Metal.show()
-		types.solar:
+		"solar":
 			Solar.show()
-
 
 func _process(delta):
 	pass

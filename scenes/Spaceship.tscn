@@ -1,10 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://bsprwxolptb1u"]
+[gd_scene load_steps=10 format=3 uid="uid://bsprwxolptb1u"]
 
 [ext_resource type="Script" path="res://scripts/spaceship.gd" id="1_jec4l"]
 [ext_resource type="Texture2D" uid="uid://26u15nlrwvge" path="res://assets/Spaceship.png" id="2_osail"]
 [ext_resource type="Texture2D" uid="uid://dvnwn1p024ly3" path="res://assets/flame.png" id="3_pa8vr"]
-[ext_resource type="PackedScene" uid="uid://x3ypyo0ryhkg" path="res://scenes/cargoship.tscn" id="4_2nqwu"]
-[ext_resource type="Script" path="res://scripts/rope.gd" id="5_1olaq"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_eka7r"]
 bounce = 0.4
@@ -32,19 +30,21 @@ point_count = 2
 [sub_resource type="Gradient" id="Gradient_8o647"]
 colors = PackedColorArray(1, 1, 1, 0.662745, 0.223103, 0.223103, 0.223103, 0)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_r4tvk"]
-radius = 5.09902
-
 [node name="Spaceship" type="RigidBody2D"]
 z_index = 10
+mass = 2.0
 physics_material_override = SubResource("PhysicsMaterial_eka7r")
 gravity_scale = 0.0
 continuous_cd = 2
+contact_monitor = true
 can_sleep = false
 freeze_mode = 1
-linear_damp = 0.51
-angular_damp = 0.51
+linear_damp_mode = 1
+linear_damp = 2.0
+angular_damp_mode = 1
+angular_damp = 5.0
 script = ExtResource("1_jec4l")
+max_speed = 500.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3, 0)
@@ -57,7 +57,6 @@ rotation = 1.5708
 texture = ExtResource("2_osail")
 
 [node name="RightBack" type="CPUParticles2D" parent="."]
-visible = false
 show_behind_parent = true
 z_index = -1
 position = Vector2(-35, 22)
@@ -83,7 +82,6 @@ scale_amount_curve = SubResource("Curve_hiji7")
 color_ramp = SubResource("Gradient_8o647")
 
 [node name="LeftBack" type="CPUParticles2D" parent="."]
-visible = false
 show_behind_parent = true
 z_index = -1
 position = Vector2(-35, -22)
@@ -109,7 +107,6 @@ scale_amount_curve = SubResource("Curve_hiji7")
 color_ramp = SubResource("Gradient_8o647")
 
 [node name="RightFront" type="CPUParticles2D" parent="."]
-visible = false
 show_behind_parent = true
 z_index = -1
 position = Vector2(-10, 22)
@@ -136,7 +133,6 @@ scale_amount_curve = SubResource("Curve_hiji7")
 color_ramp = SubResource("Gradient_8o647")
 
 [node name="LeftFront" type="CPUParticles2D" parent="."]
-visible = false
 show_behind_parent = true
 z_index = -1
 position = Vector2(-10, -22)
@@ -162,85 +158,4 @@ angle_curve = SubResource("Curve_ws48y")
 scale_amount_curve = SubResource("Curve_hiji7")
 color_ramp = SubResource("Gradient_8o647")
 
-[node name="Cargoship" parent="." instance=ExtResource("4_2nqwu")]
-position = Vector2(-171, 0)
-rotation = 1.57079
-
-[node name="Cargoship2" parent="." instance=ExtResource("4_2nqwu")]
-position = Vector2(-358, 0)
-rotation = 1.57079
-
-[node name="Cargoship3" parent="." instance=ExtResource("4_2nqwu")]
-position = Vector2(-514, 0)
-rotation = 1.57079
-
-[node name="Cargoship4" parent="." instance=ExtResource("4_2nqwu")]
-position = Vector2(-666, 0)
-rotation = 1.57079
-
-[node name="Cargoship5" parent="." instance=ExtResource("4_2nqwu")]
-position = Vector2(-815, 0)
-rotation = 1.57079
-
-[node name="Cargoship6" parent="." instance=ExtResource("4_2nqwu")]
-position = Vector2(-963, 0)
-rotation = 1.57079
-
-[node name="Rope" type="Node2D" parent="."]
-position = Vector2(-82, 0)
-script = ExtResource("5_1olaq")
-
-[node name="Piece" type="RigidBody2D" parent="Rope"]
-position = Vector2(49, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rope/Piece"]
-shape = SubResource("CircleShape2D_r4tvk")
-
-[node name="PinJoint2D" type="PinJoint2D" parent="Rope/Piece"]
-node_a = NodePath("../../..")
-node_b = NodePath("../../Piece2")
-softness = 10.0
-
-[node name="Piece2" type="RigidBody2D" parent="Rope"]
-position = Vector2(25, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rope/Piece2"]
-shape = SubResource("CircleShape2D_r4tvk")
-
-[node name="PinJoint2D" type="PinJoint2D" parent="Rope/Piece2"]
-node_a = NodePath("../../Piece")
-node_b = NodePath("../../Piece3")
-softness = 10.0
-
-[node name="Piece3" type="RigidBody2D" parent="Rope"]
-position = Vector2(2, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rope/Piece3"]
-shape = SubResource("CircleShape2D_r4tvk")
-
-[node name="PinJoint2D" type="PinJoint2D" parent="Rope/Piece3"]
-node_a = NodePath("../../Piece2")
-node_b = NodePath("../../Piece4")
-softness = 10.0
-
-[node name="Piece4" type="RigidBody2D" parent="Rope"]
-position = Vector2(-21, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rope/Piece4"]
-shape = SubResource("CircleShape2D_r4tvk")
-
-[node name="PinJoint2D" type="PinJoint2D" parent="Rope/Piece4"]
-node_a = NodePath("../../Piece3")
-node_b = NodePath("../../Piece5")
-softness = 10.0
-
-[node name="Piece5" type="RigidBody2D" parent="Rope"]
-position = Vector2(-43, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rope/Piece5"]
-shape = SubResource("CircleShape2D_r4tvk")
-
-[node name="PinJoint2D" type="PinJoint2D" parent="Rope/Piece5"]
-node_a = NodePath("../../Piece4")
-node_b = NodePath("../../../Cargoship")
-softness = 10.0
+[node name="Cargo" type="Node2D" parent="."]

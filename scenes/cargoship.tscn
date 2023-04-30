@@ -18,15 +18,18 @@ radius = 29.0
 height = 88.0
 
 [node name="Cargoship" type="RigidBody2D"]
+mass = 0.1
 physics_material_override = SubResource("PhysicsMaterial_obggj")
 gravity_scale = 0.0
 continuous_cd = 2
 contact_monitor = true
 can_sleep = false
 freeze_mode = 1
+linear_damp = 10.0
+angular_damp = 10.0
 script = ExtResource("1_7jvoh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Shape" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_uh5d7")
 
 [node name="SpriteFloor" type="Sprite2D" parent="."]

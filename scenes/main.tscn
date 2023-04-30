@@ -1,8 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://df55xx05h72k5"]
+[gd_scene load_steps=13 format=3 uid="uid://4q1ggumyahww"]
 
 [ext_resource type="PackedScene" uid="uid://cp1i4degfc147" path="res://scenes/background.tscn" id="1_4dbd7"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_gu388"]
-[ext_resource type="PackedScene" uid="uid://bsprwxolptb1u" path="res://scenes/Spaceschip.tscn" id="2_7jat3"]
+[ext_resource type="PackedScene" uid="uid://bsprwxolptb1u" path="res://scenes/Spaceship.tscn" id="2_7jat3"]
 [ext_resource type="PackedScene" uid="uid://c8rmgin8hkhaa" path="res://scenes/center_station.tscn" id="3_81iqs"]
 [ext_resource type="PackedScene" uid="uid://dwcfubn2mvnbg" path="res://scenes/station1.tscn" id="6_eeejw"]
 [ext_resource type="PackedScene" uid="uid://cv4ipbaumpk34" path="res://scenes/SlowdownHazardField.tscn" id="7_4yplb"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://lr6l1c01b78k" path="res://scenes/station3.tscn" id="10_lhcfq"]
 [ext_resource type="PackedScene" uid="uid://ck8i5rw26acfk" path="res://scenes/assigment_manager.tscn" id="11_lax8y"]
 [ext_resource type="PackedScene" uid="uid://o3okm3ibqp36" path="res://scenes/DamageHazardField.tscn" id="11_sex8v"]
+[ext_resource type="PackedScene" uid="uid://bt5apbrevqeht" path="res://scenes/timer.tscn" id="12_7m68i"]
 
 [node name="space" type="Node2D"]
 position = Vector2(-134, -16)
@@ -255,10 +256,12 @@ station_2 = NodePath("../SpaceStation2")
 station_3 = NodePath("../SpaceStation3")
 
 [node name="Spaceship" parent="." instance=ExtResource("2_7jat3")]
-position = Vector2(-630, 164)
+position = Vector2(-630, 163)
 
 [node name="Camera2D" type="Camera2D" parent="Spaceship"]
 position_smoothing_enabled = true
 position_smoothing_speed = 20.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="Timer" parent="." instance=ExtResource("12_7m68i")]
