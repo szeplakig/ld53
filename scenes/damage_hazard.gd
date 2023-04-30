@@ -1,4 +1,4 @@
-extends Area2D
+extends StaticBody2D
 
 @onready var player: Node2D = get_node("/root/space/Spaceship")
 
@@ -6,6 +6,5 @@ extends Area2D
 
 func setup(tex: Texture2D):
 	var size = tex.get_size()
-	$Shape.shape.radius = min(size.x, size.y) / 2
+	$Shape.shape.radius = (min(size.x, size.y) - 10) / 2 
 	$Sprite.texture = tex
-	$Collider/ColliderShape.shape.radius = min(size.x, size.y) / 2 - 20

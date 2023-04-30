@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c8rmgin8hkhaa"]
+[gd_scene load_steps=10 format=3 uid="uid://c8rmgin8hkhaa"]
 
 [ext_resource type="Texture2D" uid="uid://biebqylnh6ava" path="res://assets/cabin2.png" id="1_q30ij"]
 [ext_resource type="Texture2D" uid="uid://c4tsfl0l7dgpd" path="res://assets/cabin.png" id="2_sxlnh"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bts5mnqqjtu53" path="res://assets/solar.png" id="6_7asc4"]
 [ext_resource type="PackedScene" uid="uid://deo4ci38eav71" path="res://scenes/assigment_area.tscn" id="8_k36xk"]
 [ext_resource type="Texture2D" uid="uid://bl5wkc4hacmuf" path="res://assets/storage.png" id="8_yhssp"]
+[ext_resource type="Texture2D" uid="uid://chfmdvgl6ijcs" path="res://assets/home.png" id="9_5xhql"]
 
 [node name="SpaceStation" type="Node2D"]
 z_index = -1
@@ -241,3 +242,15 @@ texture = ExtResource("2_sxlnh")
 
 [node name="AssigmentArea" parent="." instance=ExtResource("8_k36xk")]
 position = Vector2(-1309.1, 713.333)
+
+[node name="TargetArrow" parent="AssigmentArea" index="3"]
+should_rotate = false
+offset = Vector2(60, 60)
+
+[node name="Sprite2D" parent="AssigmentArea/TargetArrow/Node2D" index="0"]
+position = Vector2(-32.0043, 4.00037)
+rotation = 0.0
+texture = ExtResource("9_5xhql")
+
+[editable path="AssigmentArea"]
+[editable path="AssigmentArea/TargetArrow"]

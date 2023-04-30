@@ -9,11 +9,24 @@ extends Node2D
 
 var min_scale = Vector2(0.1, 0.1)
 var max_scale = Vector2(1.0, 1.0)
+var _on = true
+
+func on():
+	_on = true
+
+func off():
+	_on = false
 
 func _physics_process(delta):
-	var distance = (global_position - global_position).length()
+	if not _on:
+		hide()
+		return
+
+	var distance = (sprite.global_position - global_position).length()
+
 	if distance > max_show_distance:
 		hide()
+		return
 	else:
 		show()
 		var t = 1.0 - (distance / max_show_distance)
@@ -57,7 +70,7 @@ func set_marker_position(bounds: Rect2):
 			length = x_length / cos(angle) if cos(angle) != 0 else x_length
 			
 		sprite.global_position = polar2cartesian(length, dp_angle) + target_position
-	
+
 	if bounds.has_point(global_position):
 		hide()
 	else:

@@ -1,29 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://dnpgx1qocomn0"]
+[gd_scene load_steps=3 format=3 uid="uid://dnpgx1qocomn0"]
 
 [ext_resource type="Script" path="res://scenes/damage_hazard.gd" id="1_15pk5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3take"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_k7ahq"]
-bounce = 0.6
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_2w1ml"]
-
-[node name="SlowHazard" type="Area2D"]
+[node name="DamageHazard" type="StaticBody2D"]
 script = ExtResource("1_15pk5")
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3take")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-
-[node name="Collider" type="RigidBody2D" parent="."]
-mass = 10.0
-physics_material_override = SubResource("PhysicsMaterial_k7ahq")
-gravity_scale = 0.0
-continuous_cd = 1
-can_sleep = false
-freeze_mode = 1
-
-[node name="ColliderShape" type="CollisionShape2D" parent="Collider"]
-shape = SubResource("CircleShape2D_2w1ml")

@@ -40,6 +40,7 @@ func transition_to_finished(prev: AssignmentState):
 		return false
 	current_state = AssignmentState.FINISHED
 	print("Assignment has been completed!")
+	assignment_state_change.emit(current_state, current_assignment)
 	return true
 	
 func transition_to_failed(prev: AssignmentState):
@@ -47,11 +48,14 @@ func transition_to_failed(prev: AssignmentState):
 		return false
 	current_state = AssignmentState.FAILED
 	print("Assignment has failed.")
+	assignment_state_change.emit(current_state, current_assignment)
 	return true
 	
 func reset():
 	current_state = AssignmentState.NOT_TAKEN
 	print("Assignment has been reset to not taken.")
+	current_assignment = null
+	assignment_state_change.emit(current_state, current_assignment)
 	return true
 
 

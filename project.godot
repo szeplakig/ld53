@@ -55,7 +55,10 @@ backward={
 
 [internationalization]
 
-pseudolocalization/use_pseudolocalization=true
+pseudolocalization/replace_with_accents=false
+pseudolocalization/prefix=""
+pseudolocalization/suffix=""
+pseudolocalization/skip_placeholders=false
 
 [rendering]
 

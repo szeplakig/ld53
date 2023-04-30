@@ -6,7 +6,7 @@
 [node name="DangerArrow" type="Node2D"]
 script = ExtResource("1_gekt4")
 should_rotate = false
-max_show_distance = 500
+max_show_distance = 3000
 offset = Vector2(40, 40)
 
 [node name="Node2D" type="Node2D" parent="."]

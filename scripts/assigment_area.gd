@@ -3,7 +3,7 @@ extends Node2D
 @onready var player = get_node("/root/space/Spaceship")
 @onready var shape = $Shape
 @onready var arrow = $TargetArrow
-@onready var text = $Control/Panel/RichTextLabel
+@onready var text = $Control/Panel/Label
 @onready var assignment_manager = get_node("/root/space/AssigmentManager")
 
 @export var interact_radius: float = 10
@@ -36,5 +36,5 @@ func assignment_state_change_handler(state, assignment):
 	elif state == assignment_manager.AssignmentState.FAILED:
 		text.text = "No worries, you failed your last assignment, but you can try it again!"
 	elif state == assignment_manager.AssignmentState.FINISHED:
-		text.text = assignment.completion_message
+		text.text = "Thank you finishing that assignment! You can take another another one anytime."
 	

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bt5apbrevqeht"]
+[gd_scene load_steps=3 format=3 uid="uid://bt5apbrevqeht"]
 
 [ext_resource type="Script" path="res://scenes/timer.gd" id="1_vluji"]
+[ext_resource type="Theme" uid="uid://cl8t1kumn62qd" path="res://theme.tres" id="2_6q00l"]
 
 [node name="Timer" type="Control"]
 clip_contents = true
@@ -18,7 +19,7 @@ wait_time = 0.05
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
-offset_right = 200.0
+offset_right = 300.0
 offset_bottom = 40.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -30,6 +31,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_6q00l")
 text = "aaaaaaaaaa"
-horizontal_alignment = 1
 vertical_alignment = 1
