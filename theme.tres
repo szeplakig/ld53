@@ -1,7 +1,19 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cl8t1kumn62qd"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://cl8t1kumn62qd"]
 
 [ext_resource type="FontFile" uid="uid://dcjsvuin75an1" path="res://assets/ethnocentric rg.otf" id="1_atyu1"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cppbx"]
+bg_color = Color(0.227451, 0.254902, 0.25098, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
 [resource]
 default_font = ExtResource("1_atyu1")
-default_font_size = 16
+default_font_size = 18
+Button/styles/normal = SubResource("StyleBoxFlat_cppbx")

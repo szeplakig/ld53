@@ -94,5 +94,5 @@ scale = Vector2(5, 5)
 texture = ExtResource("3_44xcr")
 
 [node name="AssigmentDoneArea" parent="." instance=ExtResource("7_36uw2")]
-position = Vector2(773.563, 154.667)
+position = Vector2(826.896, 322.667)
 station_id = 1

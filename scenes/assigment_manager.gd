@@ -9,6 +9,7 @@ extends Node2D
 @export var station_5: Node2D = null
 @export var cargo_map: Dictionary = {}
 
+@onready var player = get_node("/root/space/Spaceship")
 var assigmentent_index = 0
 
 
@@ -29,9 +30,9 @@ func transition_to_taken(prev: AssignmentState):
 		return false
 	current_state = AssignmentState.TAKEN
 	print("Assignment has been taken.")
-	if prev != AssignmentState.FAILED:
-		select_next_assigment()
-		
+	if prev == AssignmentState.FINISHED:
+		assigmentent_index += 1
+	select_next_assigment()
 	start_current_assignment()
 	return true
 	
@@ -52,9 +53,9 @@ func transition_to_failed(prev: AssignmentState):
 	return true
 	
 func reset():
+	player.drop_cargo()
 	current_state = AssignmentState.NOT_TAKEN
 	print("Assignment has been reset to not taken.")
-	current_assignment = null
 	assignment_state_change.emit(current_state, current_assignment)
 	return true
 
@@ -65,7 +66,10 @@ func step(state_input: String):
 	var succ = false
 	match state_input:
 		"take":
-			succ = transition_to_taken(current_state)
+			if current_state == AssignmentState.TAKEN:
+				succ = reset()
+			else:
+				succ = transition_to_taken(current_state)
 		"finished":
 			succ = transition_to_finished(current_state)
 		"failed":
@@ -77,18 +81,13 @@ func step(state_input: String):
 
 func select_next_assigment():
 	if assigmentent_index < assignment_data.file_data.easy.size():
-		print('easy')
 		current_assignment = assignment_data.file_data.easy[assigmentent_index]
 	elif assigmentent_index < assignment_data.file_data.easy.size() + assignment_data.file_data.medium.size():
-		print('medium')
 		current_assignment = assignment_data.file_data.medium[assigmentent_index - assignment_data.file_data.easy.size()]
 	elif assigmentent_index < assignment_data.file_data.easy.size() + assignment_data.file_data.medium.size() + assignment_data.file_data.hard.size():
-		print('hard')
-		current_assignment = assignment_data.file_data.hard[assigmentent_index - assignment_data.file_data.easy.size() + assignment_data.file_data.medium.size()]
+		current_assignment = assignment_data.file_data.hard[assigmentent_index - assignment_data.file_data.easy.size() - assignment_data.file_data.medium.size()]
 	else:
-		print('none left')
 		current_assignment = null
-	assigmentent_index += 1
 
 func start_current_assignment():
 	assignment_state_change.emit(current_state, current_assignment)

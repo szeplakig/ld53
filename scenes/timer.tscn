@@ -34,3 +34,5 @@ grow_vertical = 2
 theme = ExtResource("2_6q00l")
 text = "aaaaaaaaaa"
 vertical_alignment = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

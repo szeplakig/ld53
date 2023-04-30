@@ -32,4 +32,3 @@ func generate_sprites():
 		node.global_scale = Vector2(random_scale, random_scale)
 		
 		add_child(node)
-

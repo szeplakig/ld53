@@ -1,0 +1,156 @@
+[gd_scene load_steps=8 format=3 uid="uid://dwhimmj0agb1s"]
+
+[ext_resource type="Texture2D" uid="uid://biebqylnh6ava" path="res://assets/cabin2.png" id="1_103m5"]
+[ext_resource type="Texture2D" uid="uid://bl5wkc4hacmuf" path="res://assets/storage.png" id="2_s6ibq"]
+[ext_resource type="Texture2D" uid="uid://bts5mnqqjtu53" path="res://assets/solar.png" id="3_lpked"]
+[ext_resource type="Texture2D" uid="uid://b85vq3pf0v216" path="res://assets/pconnector.png" id="4_2n7r2"]
+[ext_resource type="Texture2D" uid="uid://c4tsfl0l7dgpd" path="res://assets/cabin.png" id="5_r5al4"]
+[ext_resource type="Texture2D" uid="uid://cd51xs6kbcbnx" path="res://assets/pcabin.png" id="6_ybxju"]
+[ext_resource type="PackedScene" uid="uid://dtfmitf8jhsiq" path="res://scenes/assigment_done_area.tscn" id="7_et248"]
+
+[node name="SpaceStation" type="Node2D"]
+z_index = -1
+position = Vector2(2.82813, 0)
+scale = Vector2(0.75, 0.75)
+
+[node name="Cabin5" type="Sprite2D" parent="."]
+position = Vector2(-1300.15, -166.491)
+scale = Vector2(5, 5)
+texture = ExtResource("1_103m5")
+
+[node name="Pcabin5" type="Sprite2D" parent="Cabin5"]
+position = Vector2(250.476, 283.698)
+texture = ExtResource("6_ybxju")
+
+[node name="Pcabin2" type="Sprite2D" parent="Cabin5"]
+position = Vector2(250.476, 231.698)
+texture = ExtResource("6_ybxju")
+
+[node name="Storage5" type="Sprite2D" parent="."]
+position = Vector2(-1042.58, -166.058)
+scale = Vector2(5, 5)
+texture = ExtResource("2_s6ibq")
+
+[node name="Storage4" type="Sprite2D" parent="."]
+position = Vector2(-783.923, -167.544)
+scale = Vector2(5, 5)
+texture = ExtResource("2_s6ibq")
+
+[node name="Storage" type="Sprite2D" parent="."]
+position = Vector2(-1602.44, 725.333)
+scale = Vector2(5, 5)
+texture = ExtResource("2_s6ibq")
+
+[node name="Cabin2" type="Sprite2D" parent="."]
+position = Vector2(-1343.47, 728.224)
+scale = Vector2(5, 5)
+texture = ExtResource("1_103m5")
+
+[node name="Cabin" type="Sprite2D" parent="."]
+position = Vector2(-1086.66, 729.524)
+scale = Vector2(5, 5)
+texture = ExtResource("5_r5al4")
+
+[node name="Solar4" type="Sprite2D" parent="."]
+position = Vector2(-824.015, 569.063)
+scale = Vector2(5, 5)
+texture = ExtResource("3_lpked")
+
+[node name="Solar5" type="Sprite2D" parent="."]
+position = Vector2(-564.078, 565.095)
+scale = Vector2(5, 5)
+texture = ExtResource("3_lpked")
+
+[node name="Solar6" type="Sprite2D" parent="."]
+position = Vector2(-523.757, -328.906)
+scale = Vector2(5, 5)
+texture = ExtResource("3_lpked")
+
+[node name="Solar7" type="Sprite2D" parent="."]
+position = Vector2(-266.626, -327.262)
+scale = Vector2(5, 5)
+texture = ExtResource("3_lpked")
+
+[node name="Cabin3" type="Sprite2D" parent="."]
+position = Vector2(-313.104, 725.333)
+scale = Vector2(5, 5)
+texture = ExtResource("5_r5al4")
+
+[node name="Pcabin" type="Sprite2D" parent="."]
+position = Vector2(-48.75, 726.25)
+scale = Vector2(5, 5)
+texture = ExtResource("6_ybxju")
+
+[node name="Solar" type="Sprite2D" parent="."]
+position = Vector2(214.896, 568)
+scale = Vector2(5, 5)
+texture = ExtResource("3_lpked")
+
+[node name="Solar2" type="Sprite2D" parent="."]
+position = Vector2(209.563, 1088.65)
+scale = Vector2(5, 5)
+texture = ExtResource("3_lpked")
+
+[node name="Solar3" type="Sprite2D" parent="."]
+position = Vector2(471.482, 1086.67)
+scale = Vector2(5, 5)
+texture = ExtResource("3_lpked")
+
+[node name="Pconnector10" type="Sprite2D" parent="."]
+position = Vector2(-43.3427, 513.429)
+scale = Vector2(5, 5)
+texture = ExtResource("4_2n7r2")
+
+[node name="Pconnector11" type="Sprite2D" parent="."]
+position = Vector2(-41.3585, 344.768)
+scale = Vector2(5, 5)
+texture = ExtResource("4_2n7r2")
+
+[node name="Pconnector12" type="Sprite2D" parent="."]
+position = Vector2(-40.7308, 174.122)
+scale = Vector2(5, 5)
+texture = ExtResource("4_2n7r2")
+
+[node name="Pconnector13" type="Sprite2D" parent="."]
+position = Vector2(-40.2449, 1.77193)
+scale = Vector2(5, 5)
+texture = ExtResource("4_2n7r2")
+
+[node name="Storage3" type="Sprite2D" parent="."]
+position = Vector2(734.896, 1246.67)
+scale = Vector2(5, 5)
+texture = ExtResource("2_s6ibq")
+
+[node name="Pconnector14" type="Sprite2D" parent="."]
+position = Vector2(-40.7309, -168.874)
+scale = Vector2(5, 5)
+texture = ExtResource("4_2n7r2")
+
+[node name="Solar8" type="Sprite2D" parent="."]
+position = Vector2(174.678, -327.163)
+scale = Vector2(5, 5)
+texture = ExtResource("3_lpked")
+
+[node name="Solar9" type="Sprite2D" parent="."]
+position = Vector2(431.302, -329.147)
+scale = Vector2(5, 5)
+texture = ExtResource("3_lpked")
+
+[node name="Solar10" type="Sprite2D" parent="."]
+position = Vector2(689.254, -325.179)
+scale = Vector2(5, 5)
+texture = ExtResource("3_lpked")
+
+[node name="Storage2" type="Sprite2D" parent="."]
+position = Vector2(950.896, -164)
+scale = Vector2(5, 5)
+texture = ExtResource("2_s6ibq")
+
+[node name="Cabin4" type="Sprite2D" parent="."]
+position = Vector2(1210.9, -165.333)
+scale = Vector2(5, 5)
+texture = ExtResource("1_103m5")
+
+[node name="AssigmentDoneArea" parent="." instance=ExtResource("7_et248")]
+position = Vector2(-990.438, 1400)
+station_id = 3

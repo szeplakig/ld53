@@ -11,8 +11,11 @@
 radius = 545.92
 
 [node name="DamageHazardField" type="Area2D"]
+monitoring = false
+monitorable = false
 script = ExtResource("1_bq04e")
 sprites = Array[Texture2D]([ExtResource("4_gnqq1"), ExtResource("5_pftvt"), ExtResource("6_ji160"), ExtResource("7_ruj6e")])
+num_hazards = 70
 
 [node name="Area" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ux284")

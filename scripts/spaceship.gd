@@ -16,6 +16,10 @@ var reverse_max_speed_vec = -max_speed_vec
 @onready var right_back_thruster: CPUParticles2D = $RightBack
 @onready var left_front_thruster: CPUParticles2D = $LeftFront
 @onready var right_front_thruster: CPUParticles2D = $RightFront
+@onready var thrust_sound: AudioStreamPlayer2D = $Thrust
+@onready var interact_sound: AudioStreamPlayer2D = $Interact
+@onready var bonk_sound: AudioStreamPlayer2D = $Bonk
+@onready var music: AudioStreamPlayer2D = $Music
 
 @onready var spawn_point = get_node("/root/space/Spawn")
 
@@ -77,7 +81,7 @@ func _ready():
 	right_back_thruster.emitting = false
 	left_front_thruster.emitting = false
 	right_front_thruster.emitting = false
-	
+
 
 func _physics_process(delta):
 	if global_position.length() > 25000:
@@ -105,36 +109,29 @@ func _physics_process(delta):
 		set_linear_velocity(new_speed)
 
 
-
 func _forward():
 	left_front_thruster.emitting = false
 	right_front_thruster.emitting = false
 	left_back_thruster.emitting = true
 	right_back_thruster.emitting = true
+	if not thrust_sound.playing:
+		thrust_sound.play()
 	
 func _backward():
 	left_front_thruster.emitting = true
 	right_front_thruster.emitting = true
 	left_back_thruster.emitting = false
 	right_back_thruster.emitting = false
-
-func _left():
-	left_front_thruster.emitting = true
-	right_front_thruster.emitting = false
-	left_back_thruster.emitting = false
-	right_back_thruster.emitting = true
-
-func _right():
-	left_front_thruster.emitting = false
-	right_front_thruster.emitting = true
-	left_back_thruster.emitting = true
-	right_back_thruster.emitting = false
+	if not thrust_sound.playing:
+		thrust_sound.play()
 
 func _stop():
 	left_back_thruster.emitting = false
 	right_back_thruster.emitting = false
 	left_front_thruster.emitting = false
 	right_front_thruster.emitting = false
+	if thrust_sound.playing:
+		thrust_sound.stop()
 
 func handle_thrust(forward_dir: Vector2, delta):
 	var force = forward_dir * acceleration
@@ -151,32 +148,3 @@ func handle_slow(forward_dir, delta):
 	apply_force(force / 2, right_front_thruster.global_position - global_position)
 	_backward()
 
-func handle_no_input(forward_dir, delta):
-	var value = linear_velocity.dot(forward_dir)
-	var side = linear_velocity.rotated(90).dot(forward_dir)
-	if value > 0.5:
-		_backward()
-	elif value < -0.5:
-		_forward()
-	elif value < 0:
-		if side > 0:
-			_left()
-		else:
-			_right()
-	elif value > 0:
-		if side < 0:
-			_left()
-		else:
-			_right()
-	else:
-		_stop()
-
-
-func _on_main_assigment_area_body_entered(body):
-	print("entered", body.name)
-	pass # Replace with function body.
-
-
-func _on_main_assigment_area_body_exited(body):
-	print("exited", body.name)
-	pass # Replace with function body.

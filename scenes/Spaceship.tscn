@@ -1,8 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://bsprwxolptb1u"]
+[gd_scene load_steps=15 format=3 uid="uid://bsprwxolptb1u"]
 
 [ext_resource type="Script" path="res://scripts/spaceship.gd" id="1_jec4l"]
 [ext_resource type="Texture2D" uid="uid://26u15nlrwvge" path="res://assets/Spaceship.png" id="2_osail"]
 [ext_resource type="Texture2D" uid="uid://dvnwn1p024ly3" path="res://assets/flame.png" id="3_pa8vr"]
+[ext_resource type="AudioStream" uid="uid://dng4ppdqu61a4" path="res://audio/rocket.mp3" id="4_i2l36"]
+[ext_resource type="AudioStream" uid="uid://rijwrxmp3mxc" path="res://audio/interact.wav" id="5_cyjtm"]
+[ext_resource type="AudioStream" uid="uid://ba1lvxh0h22ay" path="res://audio/bonk.wav" id="6_c8a6c"]
+[ext_resource type="AudioStream" uid="uid://ba22uaf6g8ydm" path="res://audio/music.wav" id="7_j2fbh"]
+[ext_resource type="AudioStream" uid="uid://gwdch1geqveu" path="res://audio/time.wav" id="8_heucx"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_eka7r"]
 bounce = 0.4
@@ -42,7 +47,9 @@ linear_damp = 2.0
 angular_damp_mode = 1
 angular_damp = 5.0
 script = ExtResource("1_jec4l")
-max_speed = 500.0
+spawn_offset = 100.0
+rotation_speed = 17000.0
+max_speed = 400.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3, 0)
@@ -52,6 +59,7 @@ shape = SubResource("CircleShape2D_211vc")
 
 [node name="Texture" type="Sprite2D" parent="."]
 rotation = 1.5708
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_osail")
 
 [node name="RightBack" type="CPUParticles2D" parent="."]
@@ -157,3 +165,22 @@ scale_amount_curve = SubResource("Curve_hiji7")
 color_ramp = SubResource("Gradient_8o647")
 
 [node name="Cargo" type="Node2D" parent="."]
+
+[node name="Thrust" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_i2l36")
+volume_db = -20.824
+pitch_scale = 1.1
+
+[node name="Interact" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_cyjtm")
+
+[node name="Bonk" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_c8a6c")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_j2fbh")
+autoplay = true
+
+[node name="Time" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_heucx")
+volume_db = -0.825

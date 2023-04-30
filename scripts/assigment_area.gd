@@ -21,6 +21,7 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_released("interact") and (player.global_position - global_position).length() <= interact_radius:
 		interact()
+		player.interact_sound.play()
 
 func spawn_cargo(cargo):
 	player.drop_cargo()
@@ -29,10 +30,10 @@ func spawn_cargo(cargo):
 func assignment_state_change_handler(state, assignment):
 	print("assignment_state_change_handler")
 	if state == assignment_manager.AssignmentState.TAKEN and assignment != null:
-		text.text = assignment.description
+		text.text = "Thank you for taking the assignment, now hurry!"
 		spawn_cargo(assignment.resources)
 	elif state == assignment_manager.AssignmentState.NOT_TAKEN:
-		text.text = "Take a delivery assignment whenever you feel like!"
+		text.text = assignment.description
 	elif state == assignment_manager.AssignmentState.FAILED:
 		text.text = "No worries, you failed your last assignment, but you can try it again!"
 	elif state == assignment_manager.AssignmentState.FINISHED:

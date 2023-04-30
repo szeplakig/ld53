@@ -8,9 +8,13 @@
 radius = 545.92
 
 [node name="SlowdownHazardField" type="Area2D"]
+monitoring = false
+monitorable = false
 script = ExtResource("1_q1txx")
 sprites = Array[Texture2D]([ExtResource("2_01fap"), ExtResource("3_gvmas")])
-num_hazards = 40
+num_hazards = 50
+min_scale = 1.0
+max_scale = 3.0
 
 [node name="Area" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ux284")
