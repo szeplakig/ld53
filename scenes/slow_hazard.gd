@@ -25,7 +25,7 @@ func _on_body_entered(body):
 			entered_bodies.append(body)
 		else:
 			var slowdown_count = body.get_meta("slowdown_count")
-			if slowdown_count < 3:
+			if slowdown_count < 2:
 				body.set_meta("slowdown_count", slowdown_count + 1)
 				entered_bodies.append(body)
 

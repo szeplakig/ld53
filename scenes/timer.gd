@@ -17,6 +17,32 @@ func _ready():
 	assignment_manager.assignment_state_change.connect(assignment_state_change_handler)
 
 
+var base_score_per_assignment = 50
+var time_bonus_multiplier = 2
+var resource_score_weights = {
+	"food": 10,
+	"water": 15,
+	"metal": 20,
+	"ammo": 25,
+	"neutronium": 30,
+	"solar": 35
+}
+
+func calculate_score(remaining_time: float, assignment: Dictionary) -> int:
+	var base_score = 0
+	match assignment.difficulty:
+		"easy": base_score+=base_score_per_assignment
+		"medium": base_score+=base_score_per_assignment * 2
+		"hard": base_score+=base_score_per_assignment * 3
+		_: 0
+	
+	var resource_bonus = 0
+	for resource in assignment.resources:
+		resource_bonus += resource_score_weights[resource] if resource in resource_score_weights else 0
+	
+	var time_bonus = remaining_time * time_bonus_multiplier
+	return base_score + int(time_bonus) + resource_bonus
+
 func assignment_state_change_handler(state, assignment):
 	if state == assignment_manager.AssignmentState.TAKEN:
 		target_time = assignment.time_allowance
@@ -31,7 +57,7 @@ func assignment_state_change_handler(state, assignment):
 		current_state = finished
 		time_left = $Timer.time_left
 		$Timer.stop()
-		score += (target_time - time_left) * 100
+		score += calculate_score(target_time - time_left, assignment) 
 	else:
 		current_state = stopped
 		time_left = $Timer.time_left

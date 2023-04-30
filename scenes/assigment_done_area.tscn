@@ -51,3 +51,5 @@ horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="TargetArrow" parent="." instance=ExtResource("3_gub6u")]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

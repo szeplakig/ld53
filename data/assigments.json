@@ -1,12 +1,12 @@
 {
 	"easy": [
 		{
-			"description": "Howdy Partner! Could you deliver a few pizzas to the Hungry Black Hole space station? We've been been craving some Martian cuisine.",
+			"description": "Howdy Partner! Could you deliver a few pizzas to the Hungry Black Hole space station? We've been been craving some Martian cuisine.\n\nInteract with the circle to take assignment.",
 			"resources": [
 				"food"
 			],
 			"target": 0,
-			"time_allowance": 45,
+			"time_allowance": 90,
 			"difficulty": "easy",
 			"completion_message": "Great job, you've managed to satisfy the Hungry Black Hole's craving for pizza! Hope you got a good tip from the vacuum."
 		},
@@ -17,7 +17,7 @@
 				"water"
 			],
 			"target": 0,
-			"time_allowance": 30,
+			"time_allowance": 70,
 			"difficulty": "easy",
 			"completion_message": "Congratulations, you managed to feed the Hungry Black Hole without being swallowed! You truly are out of this world."
 		},
@@ -28,22 +28,58 @@
 				"solar"
 			],
 			"target": 1,
-			"time_allowance": 60,
+			"time_allowance": 120,
 			"difficulty": "easy",
 			"completion_message": "Well done, you've helped the Sunburnt space station become less dependent on sunscreen. Keep shining!"
+		},
+		{
+			"description": "Ahoy Matey! The Iron Maiden space station is in need of lot's of water. Don't let them get too rusty now!",
+			"resources": [
+				"water",
+				"water",
+				"water"
+			],
+			"target": 2,
+			"time_allowance": 120,
+			"difficulty": "easy",
+			"completion_message": "Well done! You've watered the Iron Maiden crew. They're now ready to rock the asteroid belt!"
 		}
 	],
 	"medium": [
 		{
-			"description": "Good day sir! Might you be so kind to transport food and water to the Iron Maiden space station. It's a long trip, so bring some snacks.",
+			"description": "Hey there! The Neutron Nerd space station needs more solar panels to power their neutron experiments. Also, send some ammo just in case they need to fend off space pirates!",
 			"resources": [
-				"food",
-				"water"
+				"solar",
+				"solar",
+				"ammo"
+			],
+			"target": 3,
+			"time_allowance": 120,
+			"difficulty": "medium",
+			"completion_message": "Fantastic work! The Neutron Nerd space station now has enough solar power to conduct experiments and defend themselves against pesky pirates!"
+		},
+		{
+			"description": "Greetings! The Sunburnt space station is looking to upgrade its defense systems. Deliver ammo and solar panels so they can protect themselves from the cosmic rays!",
+			"resources": [
+				"ammo",
+				"solar"
+			],
+			"target": 1,
+			"time_allowance": 80,
+			"difficulty": "medium",
+			"completion_message": "Awesome job! The Sunburnt space station is now armed and solar-powered, ready to defend against any cosmic threats!"
+		},
+		{
+			"description": "Greetings! The Iron Maiden space station is preparing for a galactic concert! Deliver ammo for their pyrotechnics show and solar panels to keep the party going!",
+			"resources": [
+				"ammo",
+				"solar",
+				"solar"
 			],
 			"target": 2,
 			"time_allowance": 90,
 			"difficulty": "medium",
-			"completion_message": "Great job, you've successfully delivered supplies to the Iron Maiden space station. Looks like they won't be running out of snacks anytime soon!"
+			"completion_message": "Rock on! The Iron Maiden space station now has the ammo and solar power they need to put on an unforgettable cosmic concert!"
 		},
 		{
 			"description": "Hi! Cou-could you ple-ple-please deliver us some neutronium and ammo to the Neutron Nerd space station? Please handle them with care, this stuff is explosive!",
@@ -65,12 +101,50 @@
 				"water"
 			],
 			"target": 0,
-			"time_allowance": 45,
+			"time_allowance": 60,
 			"difficulty": "medium",
 			"completion_message": "Congratulations, you managed to feed the Hungry Black Hole without being swallowed! Amazing what this little ship can do!"
+		},
+		{
+			"description": "Heyoo! The Iron Maiden space station requires ammo to fend off space pirates. Deliver it swiftly, but with caution!",
+			"resources": [
+				"ammo",
+				"ammo",
+				"ammo"
+			],
+			"target": 2,
+			"time_allowance": 80,
+			"difficulty": "medium",
+			"completion_message": "Well done, space ranger! You've supplied the Iron Maiden space station with ammo. Space pirates, beware!"
 		}
 	],
 	"hard": [
+		{
+			"description": "Hello, fearless pilot! A new space station is under construction in a hazardous area. Deliver metal, solar panels, ammo, and neutronium to the construction site and help them build a fortified station!",
+			"resources": [
+				"metal",
+				"solar",
+				"ammo",
+				"neutronium"
+			],
+			"target": 4,
+			"time_allowance": 120,
+			"difficulty": "hard",
+			"completion_message": "You did it! Your delivery has ensured the new space station is well-prepared to withstand any dangers. You've truly gone above and beyond!"
+		},
+		{
+			"description": "Hey there! The Neutron Nerd space station is working on a top-secret project. Deliver neutronium, metal, solar panels, and ammo to help them complete their mission!",
+			"resources": [
+				"neutronium",
+				"metal",
+				"solar",
+				"ammo"
+			],
+			"target": 3,
+			"time_allowance": 80,
+			"difficulty": "hard",
+			"completion_message": "Well done, secret agent! You've successfully delivered the crucial resources to the Neutron Nerd space station. Their project can now proceed!"
+		},
 		{
 			"description": "Wassup!! Transport a shipment of metal and ammo to the Iron Maiden space station. It's located in a hazardous asteroid field, so be careful!",
 			"resources": [
@@ -78,7 +152,7 @@
 				"ammo"
 			],
 			"target": 2,
-			"time_allowance": 120,
+			"time_allowance": 90,
 			"difficulty": "hard",
 			"completion_message": "You've successfully delivered metal and ammo to the Iron Maiden space station. The space pirates won't know what hit them!"
 		},
@@ -92,7 +166,7 @@
 				"solar"
 			],
 			"target": 0,
-			"time_allowance": 120,
+			"time_allowance": 75,
 			"difficulty": "hard",
 			"completion_message": "Congratulations, you've successfully delivered supplies to the Hungry Black Hole space station, despite the dangerous conditions. You truly are an interstellar hero!"
 		},
@@ -107,9 +181,49 @@
 				"solar"
 			],
 			"target": 1,
-			"time_allowance": 90,
+			"time_allowance": 100,
 			"difficulty": "hard",
 			"completion_message": "Well done, you've managed to transport a massive amount of solar panels to the Sunburnt space station. Looks like you've earned your space shipper license!"
+		},
+		{
+			"description": "Urgent! The Neutron Nerd space station needs food, water, ammo, neutronium, and solar panels. Help them fuel their interstellar adventures!",
+			"resources": [
+				"food",
+				"water",
+				"ammo",
+				"neutronium",
+				"solar"
+			],
+			"target": 3,
+			"time_allowance": 100,
+			"difficulty": "hard",
+			"completion_message": "Outstanding! You've successfully delivered all the resources to the Neutron Nerd space station. They're now ready to explore the cosmos in style!"
+		},
+		{
+			"description": "Greetings, brave pilot! The Iron Maiden space station is under threat from an asteroid shower. Deliver metal, solar panels, and ammo to help them reinforce their defenses!",
+			"resources": [
+				"metal",
+				"solar",
+				"ammo",
+				"ammo"
+			],
+			"target": 2,
+			"time_allowance": 100,
+			"difficulty": "hard",
+			"completion_message": "Incredible! You've helped the Iron Maiden space station withstand the asteroid shower. Their defenses are stronger than ever!"
+		},
+		{
+			"description": "Greetings, intrepid pilot! A research outpost in a treacherous asteroid field needs reinforcement. Deliver metal and neutronium to help them strengthen their defenses!",
+			"resources": [
+				"metal",
+				"neutronium",
+				"metal",
+				"neutronium"
+			],
+			"target": 4,
+			"time_allowance": 100,
+			"difficulty": "hard",
+			"completion_message": "Outstanding work! Your swift delivery of metal and neutronium has bolstered the research outpost's defenses against the hazardous environment. You're a true space trailblazer!"
 		}
 	]
 }

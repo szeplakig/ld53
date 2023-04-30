@@ -10,13 +10,16 @@ extends Node2D
 
 
 func interact():
-	assignment_manager.step_state.emit('take')
+	if assignment_manager.current_state == assignment_manager.AssignmentState.NOT_TAKEN:
+		assignment_manager.step_state.emit('take')
+	else:
+		assignment_manager.step_state.emit('reset')
 
 
 func _ready():
 	interact_radius = shape.shape.radius
 	assignment_manager.assignment_state_change.connect(assignment_state_change_handler)
-	text.text = "Take a delivery assignment whenever you feel like!"
+	text.text = assignment_manager.current_assignment.description
 
 func _process(delta):
 	if Input.is_action_just_released("interact") and (player.global_position - global_position).length() <= interact_radius:

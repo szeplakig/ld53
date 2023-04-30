@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://xnw24xa25fc4"]
+[gd_scene load_steps=17 format=3 uid="uid://xnw24xa25fc4"]
 
 [ext_resource type="PackedScene" uid="uid://cp1i4degfc147" path="res://scenes/background.tscn" id="1_4dbd7"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_gu388"]
@@ -15,24 +15,31 @@
 [ext_resource type="PackedScene" uid="uid://bt5apbrevqeht" path="res://scenes/HUD.tscn" id="12_7m68i"]
 [ext_resource type="PackedScene" uid="uid://dwhimmj0agb1s" path="res://scenes/station4.tscn" id="14_jmfwc"]
 [ext_resource type="PackedScene" uid="uid://b73ytthxgs6uc" path="res://scenes/menu.tscn" id="15_4k8vx"]
+[ext_resource type="PackedScene" uid="uid://chel804wic7oq" path="res://scenes/station5.tscn" id="16_046q7"]
 
 [node name="space" type="Node2D"]
 position = Vector2(-134, -16)
 script = ExtResource("1_gu388")
 
+[node name="AssigmentData" parent="." instance=ExtResource("9_ndmx7")]
+
+[node name="AssigmentManager" parent="." node_paths=PackedStringArray("assignment_data", "station_0", "station_1", "station_2", "station_3") instance=ExtResource("11_lax8y")]
+assignment_data = NodePath("../AssigmentData")
+station_0 = NodePath("../SpaceStation")
+station_1 = NodePath("../SpaceStation1")
+station_2 = NodePath("../SpaceStation2")
+station_3 = NodePath("../SpaceStation3")
+
 [node name="Background" parent="." instance=ExtResource("1_4dbd7")]
 
 [node name="Hazards" type="Node2D" parent="."]
 
-[node name="SlowdownHazardField11" parent="Hazards" instance=ExtResource("7_4yplb")]
-position = Vector2(-3698, 4671)
-
 [node name="SlowdownHazardField25" parent="Hazards" instance=ExtResource("7_4yplb")]
-position = Vector2(7223, 4670)
+position = Vector2(7095, 4750)
 rotation = 1.77766
 
 [node name="SlowdownHazardField27" parent="Hazards" instance=ExtResource("7_4yplb")]
-position = Vector2(8725, 4930)
+position = Vector2(8421, 4914)
 rotation = 1.77766
 
 [node name="SlowdownHazardField38" parent="Hazards" instance=ExtResource("7_4yplb")]
@@ -56,7 +63,7 @@ position = Vector2(10972, 9784)
 rotation = 1.77766
 
 [node name="SlowdownHazardField54" parent="Hazards" instance=ExtResource("7_4yplb")]
-position = Vector2(5846, -5861)
+position = Vector2(5270, -6837)
 rotation = 1.77766
 
 [node name="SlowdownHazardField55" parent="Hazards" instance=ExtResource("7_4yplb")]
@@ -64,15 +71,11 @@ position = Vector2(7350, -3907)
 rotation = 1.77766
 
 [node name="SlowdownHazardField56" parent="Hazards" instance=ExtResource("7_4yplb")]
-position = Vector2(5335, -2306)
-rotation = 1.77766
-
-[node name="SlowdownHazardField57" parent="Hazards" instance=ExtResource("7_4yplb")]
-position = Vector2(8742, -2072)
+position = Vector2(5583, -2194)
 rotation = 1.77766
 
 [node name="SlowdownHazardField58" parent="Hazards" instance=ExtResource("7_4yplb")]
-position = Vector2(9073, -4226)
+position = Vector2(9569, -3778)
 rotation = 1.77766
 
 [node name="SlowdownHazardField59" parent="Hazards" instance=ExtResource("7_4yplb")]
@@ -104,7 +107,7 @@ position = Vector2(10788, -8457)
 rotation = 0.889558
 
 [node name="SlowdownHazardField61" parent="Hazards" instance=ExtResource("7_4yplb")]
-position = Vector2(11714, -3479)
+position = Vector2(13450, 2427)
 rotation = 1.77766
 
 [node name="SlowdownHazardField72" parent="Hazards" instance=ExtResource("7_4yplb")]
@@ -113,6 +116,22 @@ rotation = 1.77766
 
 [node name="SlowdownHazardField73" parent="Hazards" instance=ExtResource("7_4yplb")]
 position = Vector2(10634, -2628)
+rotation = 1.77766
+
+[node name="SlowdownHazardField81" parent="Hazards" instance=ExtResource("7_4yplb")]
+position = Vector2(14799, -1153)
+rotation = 1.77766
+
+[node name="SlowdownHazardField82" parent="Hazards" instance=ExtResource("7_4yplb")]
+position = Vector2(11684, -3475)
+rotation = 1.77766
+
+[node name="SlowdownHazardField79" parent="Hazards" instance=ExtResource("7_4yplb")]
+position = Vector2(11085, 74.0001)
+rotation = 1.77766
+
+[node name="SlowdownHazardField80" parent="Hazards" instance=ExtResource("7_4yplb")]
+position = Vector2(10063, 612)
 rotation = 1.77766
 
 [node name="SlowdownHazardField100" parent="Hazards" instance=ExtResource("7_4yplb")]
@@ -125,14 +144,6 @@ rotation = 1.75924
 
 [node name="SlowdownHazardField64" parent="Hazards" instance=ExtResource("7_4yplb")]
 position = Vector2(13372, -7896)
-rotation = 1.77766
-
-[node name="SlowdownHazardField52" parent="Hazards" instance=ExtResource("7_4yplb")]
-position = Vector2(9205, 7889)
-rotation = 1.77766
-
-[node name="SlowdownHazardField98" parent="Hazards" instance=ExtResource("7_4yplb")]
-position = Vector2(8950, 8453)
 rotation = 1.77766
 
 [node name="SlowdownHazardField37" parent="Hazards" instance=ExtResource("7_4yplb")]
@@ -152,23 +163,23 @@ position = Vector2(6601, 1251)
 rotation = 1.77766
 
 [node name="SlowdownHazardField89" parent="Hazards" instance=ExtResource("7_4yplb")]
-position = Vector2(4263, 2353)
+position = Vector2(4087, 2465)
 rotation = 1.77766
 
 [node name="SlowdownHazardField45" parent="Hazards" instance=ExtResource("7_4yplb")]
-position = Vector2(1386, -1451)
+position = Vector2(1677, -2078)
 rotation = 1.77766
 
 [node name="SlowdownHazardField46" parent="Hazards" instance=ExtResource("7_4yplb")]
-position = Vector2(-484, -2548)
+position = Vector2(-812, -3268)
 rotation = 1.77766
 
 [node name="SlowdownHazardField47" parent="Hazards" instance=ExtResource("7_4yplb")]
-position = Vector2(-1770, -700)
+position = Vector2(-1690, -1020)
 rotation = 1.77766
 
 [node name="SlowdownHazardField49" parent="Hazards" instance=ExtResource("7_4yplb")]
-position = Vector2(-6291, 551)
+position = Vector2(-4531, -361)
 rotation = 1.77766
 
 [node name="SlowdownHazardField28" parent="Hazards" instance=ExtResource("7_4yplb")]
@@ -176,7 +187,7 @@ position = Vector2(905, 5005)
 rotation = 1.77766
 
 [node name="SlowdownHazardField29" parent="Hazards" instance=ExtResource("7_4yplb")]
-position = Vector2(2242, 4274)
+position = Vector2(2114, 4626)
 rotation = 1.77766
 
 [node name="SlowdownHazardField30" parent="Hazards" instance=ExtResource("7_4yplb")]
@@ -184,11 +195,11 @@ position = Vector2(3383, 4510)
 rotation = 1.57181
 
 [node name="SlowdownHazardField31" parent="Hazards" instance=ExtResource("7_4yplb")]
-position = Vector2(7309, 6217)
+position = Vector2(8269, 7145)
 rotation = 1.57181
 
 [node name="SlowdownHazardField33" parent="Hazards" instance=ExtResource("7_4yplb")]
-position = Vector2(6916, 8014)
+position = Vector2(5764, 5854)
 rotation = 1.57181
 
 [node name="SlowdownHazardField35" parent="Hazards" instance=ExtResource("7_4yplb")]
@@ -196,16 +207,16 @@ position = Vector2(7656, 10068)
 rotation = 1.57181
 
 [node name="SlowdownHazardField14" parent="Hazards" instance=ExtResource("7_4yplb")]
-position = Vector2(-4331, 3218)
+position = Vector2(-5867, 3202)
 
 [node name="SlowdownHazardField15" parent="Hazards" instance=ExtResource("7_4yplb")]
-position = Vector2(-7318, 1154)
+position = Vector2(-5670, -286)
 
 [node name="SlowdownHazardField70" parent="Hazards" instance=ExtResource("7_4yplb")]
 position = Vector2(-3022, 4535)
 
 [node name="SlowdownHazardField92" parent="Hazards" instance=ExtResource("7_4yplb")]
-position = Vector2(51, -5322)
+position = Vector2(-1221, -4490)
 
 [node name="SlowdownHazardField85" parent="Hazards" instance=ExtResource("7_4yplb")]
 position = Vector2(-4094, 6665)
@@ -220,52 +231,34 @@ position = Vector2(-1617, 6528)
 position = Vector2(-499, 5879)
 
 [node name="SlowdownHazardField71" parent="Hazards" instance=ExtResource("7_4yplb")]
-position = Vector2(-237, 2703)
-
-[node name="SlowdownHazardField7" parent="Hazards" instance=ExtResource("7_4yplb")]
-position = Vector2(3085, -3003)
-
-[node name="SlowdownHazardField8" parent="Hazards" instance=ExtResource("7_4yplb")]
-position = Vector2(1392, -5124)
+position = Vector2(411, 2615)
 
 [node name="SlowdownHazardField10" parent="Hazards" instance=ExtResource("7_4yplb")]
-position = Vector2(3342, -1390)
+position = Vector2(5502, -5456)
 
 [node name="SlowdownHazardField90" parent="Hazards" instance=ExtResource("7_4yplb")]
-position = Vector2(2662, 332)
+position = Vector2(2998, 492)
 
 [node name="SlowdownHazardField91" parent="Hazards" instance=ExtResource("7_4yplb")]
-position = Vector2(1846, 2114)
-
-[node name="SlowdownHazardField9" parent="Hazards" instance=ExtResource("7_4yplb")]
-position = Vector2(3491, -4668)
-
-[node name="SlowdownHazardField3" parent="Hazards" instance=ExtResource("7_4yplb")]
-position = Vector2(1313, -3581)
-
-[node name="SlowdownHazardField107" parent="Hazards" instance=ExtResource("7_4yplb")]
-position = Vector2(1808, -6374)
+position = Vector2(1990, 2370)
 
 [node name="SlowdownHazardField4" parent="Hazards" instance=ExtResource("7_4yplb")]
-position = Vector2(-2478, -2405)
-
-[node name="SlowdownHazardField5" parent="Hazards" instance=ExtResource("7_4yplb")]
-position = Vector2(-2862, -4391)
+position = Vector2(-2398, -2405)
 
 [node name="SlowdownHazardField6" parent="Hazards" instance=ExtResource("7_4yplb")]
-position = Vector2(-1919, -5103)
+position = Vector2(-852, -1972)
 
 [node name="SlowdownHazardField23" parent="Hazards" instance=ExtResource("7_4yplb")]
-position = Vector2(-413, -7341)
+position = Vector2(1235, -5749)
 
 [node name="DamageHazardField" parent="Hazards" instance=ExtResource("11_sex8v")]
-position = Vector2(-622, -3420)
+position = Vector2(1746, -4732)
 
-[node name="DamageHazardField28" parent="Hazards" instance=ExtResource("11_sex8v")]
-position = Vector2(4660, -4479)
+[node name="DamageHazardField34" parent="Hazards" instance=ExtResource("11_sex8v")]
+position = Vector2(3112, -3041)
 
 [node name="DamageHazardField48" parent="Hazards" instance=ExtResource("11_sex8v")]
-position = Vector2(2754, -4972)
+position = Vector2(1892, -3445)
 
 [node name="DamageHazardField5" parent="Hazards" instance=ExtResource("11_sex8v")]
 position = Vector2(-2010, 4230)
@@ -295,16 +288,13 @@ position = Vector2(13192, 7767)
 position = Vector2(10281, 6274)
 
 [node name="DamageHazardField45" parent="Hazards" instance=ExtResource("11_sex8v")]
-position = Vector2(9030, 2313)
+position = Vector2(9050, 1082)
 
 [node name="DamageHazardField46" parent="Hazards" instance=ExtResource("11_sex8v")]
 position = Vector2(10025, 10354)
 
 [node name="DamageHazardField6" parent="Hazards" instance=ExtResource("11_sex8v")]
-position = Vector2(-5394, 3411)
-
-[node name="DamageHazardField10" parent="Hazards" instance=ExtResource("11_sex8v")]
-position = Vector2(-4082, -1288)
+position = Vector2(-5218, 4595)
 
 [node name="DamageHazardField11" parent="Hazards" instance=ExtResource("11_sex8v")]
 position = Vector2(-3463, -291)
@@ -321,26 +311,20 @@ position = Vector2(-1982, 2246)
 [node name="DamageHazardField27" parent="Hazards" instance=ExtResource("11_sex8v")]
 position = Vector2(-2012, 3258)
 
-[node name="DamageHazardField7" parent="Hazards" instance=ExtResource("11_sex8v")]
-position = Vector2(-6421, 3287)
-
 [node name="DamageHazardField8" parent="Hazards" instance=ExtResource("11_sex8v")]
 position = Vector2(302, 3857)
 
 [node name="DamageHazardField24" parent="Hazards" instance=ExtResource("11_sex8v")]
-position = Vector2(7771, -137)
+position = Vector2(8219, -697)
 
 [node name="DamageHazardField29" parent="Hazards" instance=ExtResource("11_sex8v")]
 position = Vector2(8427, -4777)
 
 [node name="DamageHazardField30" parent="Hazards" instance=ExtResource("11_sex8v")]
-position = Vector2(11335, -1238)
+position = Vector2(11975, -806)
 
 [node name="DamageHazardField39" parent="Hazards" instance=ExtResource("11_sex8v")]
 position = Vector2(9401, -1125)
-
-[node name="DamageHazardField43" parent="Hazards" instance=ExtResource("11_sex8v")]
-position = Vector2(7788, -2750)
 
 [node name="DamageHazardField44" parent="Hazards" instance=ExtResource("11_sex8v")]
 position = Vector2(7064, -794)
@@ -355,7 +339,7 @@ position = Vector2(8833, -5684)
 position = Vector2(11012, -6370)
 
 [node name="DamageHazardField42" parent="Hazards" instance=ExtResource("11_sex8v")]
-position = Vector2(10766, -5561)
+position = Vector2(10606, -5193)
 
 [node name="DamageHazardField32" parent="Hazards" instance=ExtResource("11_sex8v")]
 position = Vector2(11307, -7417)
@@ -365,15 +349,6 @@ position = Vector2(14219, -5785)
 
 [node name="DamageHazardField25" parent="Hazards" instance=ExtResource("11_sex8v")]
 position = Vector2(6283, -1353)
-
-[node name="DamageHazardField20" parent="Hazards" instance=ExtResource("11_sex8v")]
-position = Vector2(-6901, 2311)
-
-[node name="DamageHazardField2" parent="Hazards" instance=ExtResource("11_sex8v")]
-position = Vector2(-3338, -2004)
-
-[node name="DamageHazardField3" parent="Hazards" instance=ExtResource("11_sex8v")]
-position = Vector2(-5166, -1115)
 
 [node name="SpaceStation" parent="." instance=ExtResource("3_81iqs")]
 position = Vector2(360, 41)
@@ -434,25 +409,17 @@ rotation = -0.523598
 scale = Vector2(1.33333, 1.33333)
 
 [node name="SpaceStation1" parent="." instance=ExtResource("6_eeejw")]
-position = Vector2(3786, -6125)
+position = Vector2(3634, -5549)
 
 [node name="SpaceStation2" parent="." instance=ExtResource("7_6inmp")]
-position = Vector2(-6017, 1724)
+position = Vector2(-4529, 2364)
+rotation = 6.28318
 
 [node name="SpaceStation3" parent="." instance=ExtResource("10_lhcfq")]
-position = Vector2(11492, 8643)
+position = Vector2(6196, 8307)
 
 [node name="Spawn" type="Node2D" parent="."]
 position = Vector2(-630, 163)
-
-[node name="AssigmentData" parent="." instance=ExtResource("9_ndmx7")]
-
-[node name="AssigmentManager" parent="." node_paths=PackedStringArray("assignment_data", "station_0", "station_1", "station_2", "station_3") instance=ExtResource("11_lax8y")]
-assignment_data = NodePath("../AssigmentData")
-station_0 = NodePath("../SpaceStation")
-station_1 = NodePath("../SpaceStation1")
-station_2 = NodePath("../SpaceStation2")
-station_3 = NodePath("../SpaceStation3")
 
 [node name="Spaceship" parent="." instance=ExtResource("2_7jat3")]
 position = Vector2(-630, 163)
@@ -469,3 +436,6 @@ drag_vertical_enabled = true
 position = Vector2(12909, -6676)
 
 [node name="Menu" parent="." instance=ExtResource("15_4k8vx")]
+
+[node name="SpaceStation5" parent="." instance=ExtResource("16_046q7")]
+position = Vector2(14063, 407)

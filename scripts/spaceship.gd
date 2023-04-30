@@ -73,6 +73,7 @@ func drop_cargo():
 func _respawn():
 	global_position = spawn_point.global_position
 	linear_velocity = Vector2.ZERO
+	drop_cargo()
 
 
 func _ready():

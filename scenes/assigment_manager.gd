@@ -30,10 +30,7 @@ func transition_to_taken(prev: AssignmentState):
 		return false
 	current_state = AssignmentState.TAKEN
 	print("Assignment has been taken.")
-	if prev == AssignmentState.FINISHED:
-		assigmentent_index += 1
-	select_next_assigment()
-	start_current_assignment()
+	assignment_state_change.emit(current_state, current_assignment)
 	return true
 	
 func transition_to_finished(prev: AssignmentState):
@@ -52,9 +49,12 @@ func transition_to_failed(prev: AssignmentState):
 	assignment_state_change.emit(current_state, current_assignment)
 	return true
 	
-func reset():
+func reset(prev: AssignmentState):
 	player.drop_cargo()
 	current_state = AssignmentState.NOT_TAKEN
+	if prev == AssignmentState.FINISHED:
+		assigmentent_index += 1
+	select_next_assigment()
 	print("Assignment has been reset to not taken.")
 	assignment_state_change.emit(current_state, current_assignment)
 	return true
@@ -67,13 +67,15 @@ func step(state_input: String):
 	match state_input:
 		"take":
 			if current_state == AssignmentState.TAKEN:
-				succ = reset()
+				succ = reset(current_state)
 			else:
 				succ = transition_to_taken(current_state)
 		"finished":
 			succ = transition_to_finished(current_state)
 		"failed":
 			succ = transition_to_failed(current_state)
+		"reset":
+			succ = reset(current_state)
 	if succ:
 		print('Successful state change to ', state_input)
 	else:
@@ -87,13 +89,13 @@ func select_next_assigment():
 	elif assigmentent_index < assignment_data.file_data.easy.size() + assignment_data.file_data.medium.size() + assignment_data.file_data.hard.size():
 		current_assignment = assignment_data.file_data.hard[assigmentent_index - assignment_data.file_data.easy.size() - assignment_data.file_data.medium.size()]
 	else:
-		current_assignment = null
-
-func start_current_assignment():
-	assignment_state_change.emit(current_state, current_assignment)
+		assigmentent_index = 0
+		current_assignment = assignment_data.file_data.easy[assigmentent_index]
 
 func _ready():
 	step_state.connect(step)
+	current_state = AssignmentState.NOT_TAKEN
+	select_next_assigment()
 
 
 func _process(delta):

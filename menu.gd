@@ -35,7 +35,8 @@ func hide_menu():
 	is_menu_open = false
 
 func _on_quit_button_pressed():
-	get_tree().quit()
+	if not OS.has_feature("web"):
+		get_tree().quit()
 
 func _on_respawn_button_pressed():
 	player._respawn()

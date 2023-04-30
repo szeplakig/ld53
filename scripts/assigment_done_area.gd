@@ -20,7 +20,7 @@ func _ready():
 func assignment_state_change_handler(state, assignment):
 	current_assignment = null
 	arrow.off()
-	var mine = false
+
 	if state == assignment_manager.AssignmentState.TAKEN:
 		if assignment.target == station_id:
 			arrow.on()
@@ -58,3 +58,15 @@ func interact():
 func _process(delta):
 	if Input.is_action_just_released("interact") and (player.global_position - global_position).length() <= interact_radius:
 		interact()
+
+
+func _on_body_entered(body):
+	if body == player:
+		if current_assignment and current_assignment.target == station_id and assignment_manager.current_state == assignment_manager.AssignmentState.TAKEN:
+			if current_assignment.resources == player.cargo:
+				assignment_manager.step_state.emit('finished')
+			else:
+				assignment_manager.step_state.emit('failed')
+			arrow.off()
+			player.interact_sound.play()
+		

@@ -59,7 +59,6 @@ shape = SubResource("CircleShape2D_211vc")
 
 [node name="Texture" type="Sprite2D" parent="."]
 rotation = 1.5708
-scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_osail")
 
 [node name="RightBack" type="CPUParticles2D" parent="."]
