@@ -38,7 +38,7 @@ func _on_quit_button_pressed():
 	get_tree().quit()
 
 func _on_respawn_button_pressed():
-	player.respawn()
+	player._respawn()
 	hide_menu()
 
 func _on_toggle_music_button_pressed():

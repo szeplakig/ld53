@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://bt5apbrevqeht"]
 
-[ext_resource type="Script" path="res://scenes/timer.gd" id="1_vluji"]
-[ext_resource type="Theme" uid="uid://cl8t1kumn62qd" path="res://theme.tres" id="2_6q00l"]
+[ext_resource type="Script" path="res://scenes/timer.gd" id="1_qtd4c"]
+[ext_resource type="Theme" uid="uid://cl8t1kumn62qd" path="res://theme.tres" id="2_lherv"]
 
-[node name="Timer" type="Control"]
+[node name="HUD" type="Control"]
 clip_contents = true
 layout_mode = 3
 anchors_preset = 15
@@ -11,7 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_vluji")
+script = ExtResource("1_qtd4c")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.05
@@ -31,8 +31,29 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_6q00l")
+theme = ExtResource("2_lherv")
 text = "aaaaaaaaaa"
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -300.0
+offset_bottom = 40.0
+grow_horizontal = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_lherv")
+text = "Score: 12152341234"
 vertical_alignment = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
