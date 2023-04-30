@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://cv4ipbaumpk34"]
+
+[ext_resource type="Script" path="res://scripts/HazardField.gd" id="1_q1txx"]
+[ext_resource type="Texture2D" uid="uid://b78p46dr15e4w" path="res://assets/gas_hazard_1.png" id="2_01fap"]
+[ext_resource type="Texture2D" uid="uid://b3f38jmabfh12" path="res://assets/gas_hazard_2.png" id="3_gvmas"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ux284"]
+radius = 545.92
+
+[node name="SlowdownHazardField" type="Area2D"]
+script = ExtResource("1_q1txx")
+sprites = Array[Texture2D]([ExtResource("2_01fap"), ExtResource("3_gvmas")])
+num_hazards = 40
+
+[node name="Area" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ux284")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0mpmrj7tcuo0"]
+
+[ext_resource type="Script" path="res://scenes/assigment_data.gd" id="1_0e0tn"]
+
+[node name="AssigmentData" type="Node2D"]
+script = ExtResource("1_0e0tn")

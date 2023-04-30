@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://pjvnkenllhiu"]
+
+[ext_resource type="Script" path="res://scripts/TargetArrow.gd" id="1_gekt4"]
+[ext_resource type="Texture2D" uid="uid://cs7uqqtjlq2jl" path="res://assets/danger_arrow.png" id="2_8crtm"]
+
+[node name="DangerArrow" type="Node2D"]
+script = ExtResource("1_gekt4")
+should_rotate = false
+max_show_distance = 500
+offset = Vector2(40, 40)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+z_index = 7
+position = Vector2(-32, -35)
+scale = Vector2(2, 2)
+texture = ExtResource("2_8crtm")
+centered = false

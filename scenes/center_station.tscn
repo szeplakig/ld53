@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c8rmgin8hkhaa"]
+[gd_scene load_steps=9 format=3 uid="uid://c8rmgin8hkhaa"]
 
 [ext_resource type="Texture2D" uid="uid://biebqylnh6ava" path="res://assets/cabin2.png" id="1_q30ij"]
 [ext_resource type="Texture2D" uid="uid://c4tsfl0l7dgpd" path="res://assets/cabin.png" id="2_sxlnh"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cd51xs6kbcbnx" path="res://assets/pcabin.png" id="4_lqkqi"]
 [ext_resource type="Texture2D" uid="uid://b85vq3pf0v216" path="res://assets/pconnector.png" id="5_ft3u2"]
 [ext_resource type="Texture2D" uid="uid://bts5mnqqjtu53" path="res://assets/solar.png" id="6_7asc4"]
+[ext_resource type="PackedScene" uid="uid://deo4ci38eav71" path="res://scenes/assigment_area.tscn" id="8_k36xk"]
 [ext_resource type="Texture2D" uid="uid://bl5wkc4hacmuf" path="res://assets/storage.png" id="8_yhssp"]
 
 [node name="SpaceStation" type="Node2D"]
@@ -237,3 +238,6 @@ texture = ExtResource("2_sxlnh")
 position = Vector2(949.45, -168.147)
 scale = Vector2(5, 5)
 texture = ExtResource("2_sxlnh")
+
+[node name="AssigmentArea" parent="." instance=ExtResource("8_k36xk")]
+position = Vector2(-1309.1, 713.333)

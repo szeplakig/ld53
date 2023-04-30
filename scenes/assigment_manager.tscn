@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ck8i5rw26acfk"]
+
+[ext_resource type="Script" path="res://scenes/assigment_manager.gd" id="1_udj7u"]
+
+[node name="AssigmentManager" type="Node2D"]
+script = ExtResource("1_udj7u")

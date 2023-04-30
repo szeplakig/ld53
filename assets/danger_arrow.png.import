@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvnwn1p024ly3"
-path="res://.godot/imported/flame.png-db60f0077f4cbfa2349c45a8a8fb50c0.ctex"
+uid="uid://cs7uqqtjlq2jl"
+path="res://.godot/imported/danger_arrow.png-ba9d9fea5e744760ce422bbda4f9c36b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/flame.png"
-dest_files=["res://.godot/imported/flame.png-db60f0077f4cbfa2349c45a8a8fb50c0.ctex"]
+source_file="res://assets/danger_arrow.png"
+dest_files=["res://.godot/imported/danger_arrow.png-ba9d9fea5e744760ce422bbda4f9c36b.ctex"]
 
 [params]
 

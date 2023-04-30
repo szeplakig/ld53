@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvnwn1p024ly3"
-path="res://.godot/imported/flame.png-db60f0077f4cbfa2349c45a8a8fb50c0.ctex"
+uid="uid://d26agxkb2ipeu"
+path="res://.godot/imported/solar_panel_flatack.png-6df19d62b414afaf29c60a5d75590c4f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/flame.png"
-dest_files=["res://.godot/imported/flame.png-db60f0077f4cbfa2349c45a8a8fb50c0.ctex"]
+source_file="res://assets/solar_panel_flatack.png"
+dest_files=["res://.godot/imported/solar_panel_flatack.png-6df19d62b414afaf29c60a5d75590c4f.ctex"]
 
 [params]
 

@@ -1,15 +1,46 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtfmitf8jhsiq"]
+[gd_scene load_steps=5 format=3 uid="uid://dtfmitf8jhsiq"]
 
 [ext_resource type="Texture2D" uid="uid://ote2bf40i5dr" path="res://assets/blue_circle.png" id="1_m8aos"]
+[ext_resource type="Script" path="res://scripts/assigment_done_area.gd" id="1_wclmc"]
+[ext_resource type="PackedScene" uid="uid://b1fnuvmqvpmn3" path="res://scenes/TargetArrow.tscn" id="3_gub6u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j3inr"]
-radius = 64.7611
+radius = 190.066
 
 [node name="AssigmentDoneArea" type="Area2D"]
+z_index = 2
+script = ExtResource("1_wclmc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Shape" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_j3inr")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(3, 3)
 texture = ExtResource("1_m8aos")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -118.0
+offset_top = -144.0
+offset_right = 119.0
+offset_bottom = -71.0
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Thank you for your delivery!"
+
+[node name="TargetArrow" parent="." instance=ExtResource("3_gub6u")]

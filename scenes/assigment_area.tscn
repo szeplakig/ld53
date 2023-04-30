@@ -1,15 +1,49 @@
-[gd_scene load_steps=3 format=3 uid="uid://deo4ci38eav71"]
+[gd_scene load_steps=5 format=3 uid="uid://deo4ci38eav71"]
 
+[ext_resource type="Script" path="res://scripts/assigment_area.gd" id="1_f0opd"]
 [ext_resource type="Texture2D" uid="uid://daob71d1awqh6" path="res://assets/green_circle.png" id="1_iliu2"]
+[ext_resource type="PackedScene" uid="uid://b1fnuvmqvpmn3" path="res://scenes/TargetArrow.tscn" id="3_omei0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j3inr"]
-radius = 64.7611
+radius = 191.316
 
 [node name="AssigmentArea" type="Area2D"]
-scale = Vector2(3, 3)
+z_index = 2
+script = ExtResource("1_f0opd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Shape" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_j3inr")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
 texture = ExtResource("1_iliu2")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -174.0
+offset_top = -340.0
+offset_right = 174.0
+offset_bottom = -203.0
+
+[node name="Panel" type="Panel" parent="Control"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hey there!
+We've got a high-priority delivery for you. We need you to transport a shipment of energy resources to a nearby space station ASAP. 
+The power's out and we're running low on reserves. We're counting on you to save the day and get us back up and running. Good luck!"
+
+[node name="TargetArrow" parent="." instance=ExtResource("3_omei0")]

@@ -19,7 +19,7 @@ func generate_stars():
 func create_star() -> Node2D:
 	var star = Sprite2D.new()
 	var scl = randf_range(min_scale, max_scale)
-	var pos = Vector2(randi_range(-screen_size.x, screen_size.x), randi_range(-screen_size.y, screen_size.y))
+	var pos = Vector2(randf_range(-screen_size.x, screen_size.x), randf_range(-screen_size.y, screen_size.y))
 	star.position = pos
 	star.rotate(randf_range(0, TAU))
 	star.texture = load("res://assets/star.png")

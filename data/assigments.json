@@ -1,0 +1,118 @@
+{
+	"easy": [
+		{
+			"description": "Howdy Partner! Could you deliver a pizza to the Hungry Black Hole space station? We've been been craving some Martian cuisine.",
+			"resources": [
+				"food"
+			],
+			"target": 0,
+			"time_allowance": 60,
+			"difficulty": "easy",
+			"completion_message": "Great job, you've managed to satisfy the Hungry Black Hole's craving for pizza! Hope you got a good tip from the vacuum."
+		},
+		{
+			"description": "Hello there! Deliver some food and water to the Hungry Black Hole space station before it eats everything else!",
+			"resources": [
+				"food",
+				"water"
+			],
+			"target": 0,
+			"time_allowance": 45,
+			"difficulty": "easy",
+			"completion_message": "Congratulations, you managed to feed the Hungry Black Hole without being swallowed! You truly are out of this world."
+		},
+		{
+			"description": "Heyoo! Deliver metal, fuel and solar panels to the Sunburnt space station, but be careful not to get burned! Watch out for the solar panels, they break easily!",
+			"resources": [
+				"metal",
+				"fuel",
+				"solar panels"
+			],
+			"target": 1,
+			"time_allowance": 60,
+			"difficulty": "easy",
+			"completion_message": "Well done, you've helped the Sunburnt space station become less dependent on sunscreen. Keep shining!"
+		}
+	],
+	"medium": [
+		{
+			"description": "Good day sir! Might you be so kind to transport food, water, and fuel to the Spacey McSpaceface space station. It's a long trip, so bring some snacks.",
+			"resources": [
+				"food",
+				"water",
+				"fuel"
+			],
+			"target": 4,
+			"time_allowance": 90,
+			"difficulty": "medium",
+			"completion_message": "Great job, you've successfully delivered supplies to the Spacey McSpaceface space station. Looks like they won't be running out of fuel or snacks anytime soon!"
+		},
+		{
+			"description": "Hi! Cou-could you ple-ple-please deliver us some neutronium and ammo to the Neutron Nerd space station? Please handle them with care, this stuff is explosive!",
+			"resources": [
+				"ammo",
+				"neutronium"
+			],
+			"target": 3,
+			"time_allowance": 90,
+			"difficulty": "medium",
+			"completion_message": "Congratulations, you've safely delivered the neutronium and ammo to the Neutron Nerd space station without causing a cosmic explosion. You're a star!"
+		},
+		
+		{
+			"description": "Howdy Partner! Deliver food and water to the Hungry Black Hole space station before it eats everything else. Please hurry!",
+			"resources": [
+				"food",
+				"food",
+				"water",
+				"water"
+			],
+			"target": 0,
+			"time_allowance": 45,
+			"difficulty": "medium",
+			"completion_message": "Congratulations, you managed to feed the Hungry Black Hole without being swallowed! Amazing what this little ship can do!"
+		}
+	],
+	"hard": [
+		{
+			"description": "Wassup!! Transport a shipment of metal and ammo to the Iron Maiden space station. It's located in a hazardous asteroid field, so be careful!",
+			"resources": [
+				"metal",
+				"ammo"
+			],
+			"target": 2,
+			"time_allowance": 120,
+			"difficulty": "hard",
+			"completion_message": "You've successfully delivered metal and ammo to the Iron Maiden space station. The space pirates won't know what hit them!"
+		},
+		{
+			"description": "Hello there! Deliver food, water, metal, and solar panels to the Hungry Black Hole space station. I you",
+			"resources": [
+				"food",
+				"water",
+				"metal",
+				"solar panels",
+				"solar panels"
+			],
+			"target": 0,
+			"time_allowance": 120,
+			"difficulty": "hard",
+			"completion_message": "Congratulations, you've successfully delivered supplies to the Hungry Black Hole space station, despite the dangerous conditions. You truly are an interstellar hero!"
+		},
+		{
+			"description": "Heyoo! Transport a large shipment of fuel to the Sunburnt space station. We need a LOT of fuel for, hmm... you don't need to know.",
+			"resources": [
+				"fuel",
+				"fuel",
+				"fuel",
+				"fuel",
+				"fuel",
+				"fuel"
+			],
+			"target": 1,
+			"time_allowance": 90,
+			"difficulty": "hard",
+			"completion_message": "Well done, you've managed to transport a massive amount of fuel to the Sunburnt space station. Looks like you've earned your space shipper license!"
+		}
+	]
+}

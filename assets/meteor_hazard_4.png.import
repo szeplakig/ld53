@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvnwn1p024ly3"
-path="res://.godot/imported/flame.png-db60f0077f4cbfa2349c45a8a8fb50c0.ctex"
+uid="uid://ut5c56qo27vi"
+path="res://.godot/imported/meteor_hazard_4.png-7dec00c2b13f68517ff67dbae40a70ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/flame.png"
-dest_files=["res://.godot/imported/flame.png-db60f0077f4cbfa2349c45a8a8fb50c0.ctex"]
+source_file="res://assets/meteor_hazard_4.png"
+dest_files=["res://.godot/imported/meteor_hazard_4.png-7dec00c2b13f68517ff67dbae40a70ec.ctex"]
 
 [params]
 

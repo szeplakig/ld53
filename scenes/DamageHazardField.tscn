@@ -1,0 +1,21 @@
+[gd_scene load_steps=8 format=3 uid="uid://o3okm3ibqp36"]
+
+[ext_resource type="Script" path="res://scripts/HazardField.gd" id="1_xr2xn"]
+[ext_resource type="Texture2D" uid="uid://dtamebewjq2vn" path="res://assets/meteor_hazard_1.png" id="4_gnqq1"]
+[ext_resource type="Texture2D" uid="uid://bxwqsfrxgkh5g" path="res://assets/meteor_hazard_2.png" id="5_pftvt"]
+[ext_resource type="Texture2D" uid="uid://ba6lpvqpj3v8v" path="res://assets/meteor_hazard_3.png" id="6_ji160"]
+[ext_resource type="PackedScene" uid="uid://pjvnkenllhiu" path="res://scenes/DangerArrow.tscn" id="6_wgcsp"]
+[ext_resource type="Texture2D" uid="uid://ut5c56qo27vi" path="res://assets/meteor_hazard_4.png" id="7_ruj6e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ux284"]
+radius = 545.92
+
+[node name="DamageHazardField" type="Area2D"]
+script = ExtResource("1_xr2xn")
+sprites = Array[Texture2D]([ExtResource("4_gnqq1"), ExtResource("5_pftvt"), ExtResource("6_ji160"), ExtResource("7_ruj6e")])
+
+[node name="Area" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ux284")
+debug_color = Color(0.768627, 0.156863, 0.572549, 0.419608)
+
+[node name="DangerArrow" parent="." instance=ExtResource("6_wgcsp")]

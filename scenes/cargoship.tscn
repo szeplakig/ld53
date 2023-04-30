@@ -1,0 +1,324 @@
+[gd_scene load_steps=12 format=3 uid="uid://x3ypyo0ryhkg"]
+
+[ext_resource type="Script" path="res://scenes/cargoship.gd" id="1_7jvoh"]
+[ext_resource type="Texture2D" uid="uid://31rkvswu04wi" path="res://assets/cargo_top.png" id="1_b1mkl"]
+[ext_resource type="Texture2D" uid="uid://crvgvkitrhfjl" path="res://assets/cargo_floor.png" id="1_kp8vt"]
+[ext_resource type="Texture2D" uid="uid://dyp3si18h2v7" path="res://assets/water.png" id="2_k4f3k"]
+[ext_resource type="Texture2D" uid="uid://b3ny2age663qs" path="res://assets/food.png" id="3_smkdx"]
+[ext_resource type="Texture2D" uid="uid://et7n2rmrd7wl" path="res://assets/metal.png" id="4_3cwwc"]
+[ext_resource type="Texture2D" uid="uid://w7joa08wy36l" path="res://assets/ammo.png" id="4_7vpl5"]
+[ext_resource type="Texture2D" uid="uid://d26agxkb2ipeu" path="res://assets/solar_panel_flatack.png" id="5_7rkvv"]
+[ext_resource type="Texture2D" uid="uid://beqam67yw2n2o" path="res://assets/neutronium.png" id="6_vv2ma"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_obggj"]
+bounce = 0.4
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uh5d7"]
+radius = 29.0
+height = 88.0
+
+[node name="Cargoship" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_obggj")
+gravity_scale = 0.0
+continuous_cd = 2
+contact_monitor = true
+can_sleep = false
+freeze_mode = 1
+script = ExtResource("1_7jvoh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_uh5d7")
+
+[node name="SpriteFloor" type="Sprite2D" parent="."]
+texture = ExtResource("1_kp8vt")
+
+[node name="Types" type="Node2D" parent="."]
+
+[node name="Water" type="Node2D" parent="Types"]
+visible = false
+
+[node name="Water" type="Sprite2D" parent="Types/Water"]
+position = Vector2(-19, -20)
+texture = ExtResource("2_k4f3k")
+
+[node name="Water2" type="Sprite2D" parent="Types/Water"]
+position = Vector2(-11, -31)
+texture = ExtResource("2_k4f3k")
+
+[node name="Water3" type="Sprite2D" parent="Types/Water"]
+position = Vector2(5, -37)
+texture = ExtResource("2_k4f3k")
+
+[node name="Water4" type="Sprite2D" parent="Types/Water"]
+position = Vector2(2, -21)
+texture = ExtResource("2_k4f3k")
+
+[node name="Water5" type="Sprite2D" parent="Types/Water"]
+position = Vector2(19, -18)
+texture = ExtResource("2_k4f3k")
+
+[node name="Water8" type="Sprite2D" parent="Types/Water"]
+position = Vector2(7, 4)
+texture = ExtResource("2_k4f3k")
+
+[node name="Water13" type="Sprite2D" parent="Types/Water"]
+position = Vector2(-7, 3)
+texture = ExtResource("2_k4f3k")
+
+[node name="Water6" type="Sprite2D" parent="Types/Water"]
+position = Vector2(-22, -4)
+texture = ExtResource("2_k4f3k")
+
+[node name="Water7" type="Sprite2D" parent="Types/Water"]
+position = Vector2(-21, 13)
+texture = ExtResource("2_k4f3k")
+
+[node name="Water9" type="Sprite2D" parent="Types/Water"]
+position = Vector2(-8, 36)
+texture = ExtResource("2_k4f3k")
+
+[node name="Water10" type="Sprite2D" parent="Types/Water"]
+position = Vector2(10, 33)
+texture = ExtResource("2_k4f3k")
+
+[node name="Water11" type="Sprite2D" parent="Types/Water"]
+position = Vector2(21, 16)
+texture = ExtResource("2_k4f3k")
+
+[node name="Water12" type="Sprite2D" parent="Types/Water"]
+position = Vector2(-1, 22)
+texture = ExtResource("2_k4f3k")
+
+[node name="Water14" type="Sprite2D" parent="Types/Water"]
+position = Vector2(22, -2)
+texture = ExtResource("2_k4f3k")
+
+[node name="Food" type="Node2D" parent="Types"]
+visible = false
+
+[node name="Food" type="Sprite2D" parent="Types/Food"]
+position = Vector2(-21, 2)
+texture = ExtResource("3_smkdx")
+
+[node name="Food2" type="Sprite2D" parent="Types/Food"]
+position = Vector2(-8, -34)
+texture = ExtResource("3_smkdx")
+
+[node name="Food3" type="Sprite2D" parent="Types/Food"]
+position = Vector2(8, -34)
+texture = ExtResource("3_smkdx")
+
+[node name="Food4" type="Sprite2D" parent="Types/Food"]
+position = Vector2(19, -19)
+texture = ExtResource("3_smkdx")
+
+[node name="Food5" type="Sprite2D" parent="Types/Food"]
+position = Vector2(22, -3)
+texture = ExtResource("3_smkdx")
+
+[node name="Food6" type="Sprite2D" parent="Types/Food"]
+position = Vector2(20, 15)
+texture = ExtResource("3_smkdx")
+
+[node name="Food7" type="Sprite2D" parent="Types/Food"]
+position = Vector2(8, 32)
+texture = ExtResource("3_smkdx")
+
+[node name="Food8" type="Sprite2D" parent="Types/Food"]
+position = Vector2(-8, 34)
+texture = ExtResource("3_smkdx")
+
+[node name="Food9" type="Sprite2D" parent="Types/Food"]
+position = Vector2(-19, 19)
+texture = ExtResource("3_smkdx")
+
+[node name="Food10" type="Sprite2D" parent="Types/Food"]
+position = Vector2(-20, -15)
+texture = ExtResource("3_smkdx")
+
+[node name="Food11" type="Sprite2D" parent="Types/Food"]
+position = Vector2(-6, -5)
+texture = ExtResource("3_smkdx")
+
+[node name="Food12" type="Sprite2D" parent="Types/Food"]
+position = Vector2(-1, -20)
+texture = ExtResource("3_smkdx")
+
+[node name="Food13" type="Sprite2D" parent="Types/Food"]
+position = Vector2(7, 3)
+texture = ExtResource("3_smkdx")
+
+[node name="Metal" type="Node2D" parent="Types"]
+visible = false
+
+[node name="Metal" type="Sprite2D" parent="Types/Metal"]
+position = Vector2(8, -35)
+texture = ExtResource("4_3cwwc")
+
+[node name="Metal2" type="Sprite2D" parent="Types/Metal"]
+position = Vector2(-8, -34)
+texture = ExtResource("4_3cwwc")
+
+[node name="Metal3" type="Sprite2D" parent="Types/Metal"]
+position = Vector2(22, 0)
+texture = ExtResource("4_3cwwc")
+
+[node name="Metal4" type="Sprite2D" parent="Types/Metal"]
+position = Vector2(19, -17)
+texture = ExtResource("4_3cwwc")
+
+[node name="Metal5" type="Sprite2D" parent="Types/Metal"]
+position = Vector2(19, 15)
+texture = ExtResource("4_3cwwc")
+
+[node name="Metal6" type="Sprite2D" parent="Types/Metal"]
+position = Vector2(-22, 2)
+texture = ExtResource("4_3cwwc")
+
+[node name="Metal7" type="Sprite2D" parent="Types/Metal"]
+position = Vector2(-19, -16)
+texture = ExtResource("4_3cwwc")
+
+[node name="Metal8" type="Sprite2D" parent="Types/Metal"]
+position = Vector2(-18, 19)
+texture = ExtResource("4_3cwwc")
+
+[node name="Metal9" type="Sprite2D" parent="Types/Metal"]
+position = Vector2(-9, 34)
+texture = ExtResource("4_3cwwc")
+
+[node name="Metal10" type="Sprite2D" parent="Types/Metal"]
+position = Vector2(8, 32)
+texture = ExtResource("4_3cwwc")
+
+[node name="Metal11" type="Sprite2D" parent="Types/Metal"]
+position = Vector2(-6, -2)
+texture = ExtResource("4_3cwwc")
+
+[node name="Metal12" type="Sprite2D" parent="Types/Metal"]
+position = Vector2(5, -2)
+texture = ExtResource("4_3cwwc")
+
+[node name="Solar" type="Node2D" parent="Types"]
+visible = false
+
+[node name="SolarPanelFlatack" type="Sprite2D" parent="Types/Solar"]
+position = Vector2(-1, -27)
+texture = ExtResource("5_7rkvv")
+
+[node name="SolarPanelFlatack2" type="Sprite2D" parent="Types/Solar"]
+position = Vector2(0, 28)
+texture = ExtResource("5_7rkvv")
+
+[node name="SolarPanelFlatack3" type="Sprite2D" parent="Types/Solar"]
+position = Vector2(-17, 0)
+texture = ExtResource("5_7rkvv")
+
+[node name="SolarPanelFlatack4" type="Sprite2D" parent="Types/Solar"]
+position = Vector2(17, 0)
+texture = ExtResource("5_7rkvv")
+
+[node name="Neutronium" type="Node2D" parent="Types"]
+visible = false
+
+[node name="Neutronium" type="Sprite2D" parent="Types/Neutronium"]
+position = Vector2(9, -34)
+texture = ExtResource("6_vv2ma")
+
+[node name="Neutronium2" type="Sprite2D" parent="Types/Neutronium"]
+position = Vector2(-8, -34)
+texture = ExtResource("6_vv2ma")
+
+[node name="Neutronium3" type="Sprite2D" parent="Types/Neutronium"]
+position = Vector2(-19, -18)
+texture = ExtResource("6_vv2ma")
+
+[node name="Neutronium4" type="Sprite2D" parent="Types/Neutronium"]
+position = Vector2(-22, 0)
+texture = ExtResource("6_vv2ma")
+
+[node name="Neutronium5" type="Sprite2D" parent="Types/Neutronium"]
+position = Vector2(-18, 17)
+texture = ExtResource("6_vv2ma")
+
+[node name="Neutronium6" type="Sprite2D" parent="Types/Neutronium"]
+position = Vector2(-8, 33)
+texture = ExtResource("6_vv2ma")
+
+[node name="Neutronium7" type="Sprite2D" parent="Types/Neutronium"]
+position = Vector2(9, 33)
+texture = ExtResource("6_vv2ma")
+
+[node name="Neutronium8" type="Sprite2D" parent="Types/Neutronium"]
+position = Vector2(19, 17)
+texture = ExtResource("6_vv2ma")
+
+[node name="Neutronium9" type="Sprite2D" parent="Types/Neutronium"]
+position = Vector2(21, 1)
+texture = ExtResource("6_vv2ma")
+
+[node name="Neutronium10" type="Sprite2D" parent="Types/Neutronium"]
+position = Vector2(19, -16)
+texture = ExtResource("6_vv2ma")
+
+[node name="Neutronium11" type="Sprite2D" parent="Types/Neutronium"]
+position = Vector2(-6, -5)
+texture = ExtResource("6_vv2ma")
+
+[node name="Ammo" type="Node2D" parent="Types"]
+visible = false
+
+[node name="Ammo" type="Sprite2D" parent="Types/Ammo"]
+position = Vector2(-9, -34)
+texture = ExtResource("4_7vpl5")
+
+[node name="Ammo2" type="Sprite2D" parent="Types/Ammo"]
+position = Vector2(8, -37)
+texture = ExtResource("4_7vpl5")
+
+[node name="Ammo3" type="Sprite2D" parent="Types/Ammo"]
+position = Vector2(-8, 34)
+texture = ExtResource("4_7vpl5")
+
+[node name="Ammo4" type="Sprite2D" parent="Types/Ammo"]
+position = Vector2(8, 33)
+texture = ExtResource("4_7vpl5")
+
+[node name="Ammo5" type="Sprite2D" parent="Types/Ammo"]
+position = Vector2(20, 13)
+texture = ExtResource("4_7vpl5")
+
+[node name="Ammo6" type="Sprite2D" parent="Types/Ammo"]
+position = Vector2(21, -4)
+texture = ExtResource("4_7vpl5")
+
+[node name="Ammo7" type="Sprite2D" parent="Types/Ammo"]
+position = Vector2(18, -21)
+texture = ExtResource("4_7vpl5")
+
+[node name="Ammo8" type="Sprite2D" parent="Types/Ammo"]
+position = Vector2(-18, -19)
+texture = ExtResource("4_7vpl5")
+
+[node name="Ammo9" type="Sprite2D" parent="Types/Ammo"]
+position = Vector2(-22, -2)
+texture = ExtResource("4_7vpl5")
+
+[node name="Ammo10" type="Sprite2D" parent="Types/Ammo"]
+position = Vector2(-16, 17)
+texture = ExtResource("4_7vpl5")
+
+[node name="Ammo11" type="Sprite2D" parent="Types/Ammo"]
+position = Vector2(-6, 2)
+texture = ExtResource("4_7vpl5")
+
+[node name="Ammo12" type="Sprite2D" parent="Types/Ammo"]
+position = Vector2(3, -21)
+texture = ExtResource("4_7vpl5")
+
+[node name="Ammo13" type="Sprite2D" parent="Types/Ammo"]
+position = Vector2(6, 2)
+texture = ExtResource("4_7vpl5")
+
+[node name="SpriteTop" type="Sprite2D" parent="."]
+texture = ExtResource("1_b1mkl")

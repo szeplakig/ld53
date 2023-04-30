@@ -17,7 +17,6 @@ motion_mirroring = Vector2(2559, 1366)
 [node name="Node2D" type="Node2D" parent="ParallaxBackground/ParallaxLayer"]
 visible = false
 script = ExtResource("2_0awpf")
-max_scale = 0.03
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture = ExtResource("2_3x53f")
@@ -31,10 +30,6 @@ motion_mirroring = Vector2(2558, 1366)
 [node name="Node2D" type="Node2D" parent="ParallaxBackground/ParallaxLayer2"]
 visible = false
 script = ExtResource("2_0awpf")
-star_count = 1500
-min_scale = 0.03
-max_scale = 0.06
-screen_size = Vector2(2020, 2020)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 texture = ExtResource("3_luxr0")
@@ -48,8 +43,6 @@ motion_mirroring = Vector2(2560, 1357)
 [node name="Node2D" type="Node2D" parent="ParallaxBackground/ParallaxLayer3"]
 visible = false
 script = ExtResource("2_0awpf")
-star_count = 1000
-screen_size = Vector2(2105, 2105)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
 texture = ExtResource("4_00euq")
@@ -60,5 +53,7 @@ z_index = -6
 motion_scale = Vector2(0.9, 0.9)
 
 [node name="planet layer" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+z_index = 1
+y_sort_enabled = true
 scale = Vector2(1.1, 1.1)
 texture = ExtResource("5_3tvvp")
